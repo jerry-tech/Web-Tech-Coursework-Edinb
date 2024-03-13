@@ -1,0 +1,430 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: monospace, 'Courier New', Courier;
+    font-size: 16px;
+    background: url(/img/design.svg) no-repeat top left;
+    background-size: clamp(5rem, 50vw, 30rem);
+    padding-right: 3rem;
+}
+
+main {
+    margin-bottom: 4rem !important;
+}
+
+/* text class */
+h1,
+h2 {
+    margin: 0;
+    -webkit-text-stroke: .5px black;
+}
+
+h3 {
+    margin: 0;
+}
+
+i {
+    font-size: smaller;
+    letter-spacing: -1.5px;
+    float: inline-end;
+    -webkit-text-stroke: .15px black;
+}
+
+
+/* container class */
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* margin class */
+
+.m-1 {
+    margin: 0.5rem;
+}
+
+.m-2 {
+    margin: 1rem;
+}
+
+.m-3 {
+    margin: 1.5rem;
+}
+
+.m-4 {
+    margin: 2rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+.mt-4 {
+    margin-top: 4rem;
+}
+
+
+/* header section */
+
+.header-content {
+    display: block;
+}
+
+.logo {
+    max-width: fit-content;
+}
+
+.sec {
+    position: relative;
+    transform: translateY(-80%);
+}
+
+.sec .logo-img {
+    width: 80%;
+}
+
+.nav-list {
+    font-size: clamp(1rem, 50vw, 1.1rem);
+    display: inline-flex;
+}
+
+.nav-list .nav-list-items {
+    display: flex;
+    color: #fff;
+    flex: 1;
+    gap: 1rem;
+    text-wrap: nowrap;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: auto;
+    padding: 1rem 0;
+}
+.nav-list .nav-list-items li .logo {
+    margin: 0;
+}
+
+.nav-list-items li a {
+    text-decoration: none;
+    padding: 0 2rem;
+    color: var(--text-dark);
+}
+
+.nav-list-items li a:hover {
+    background-color: var(--primary-color-25);
+    border-radius: .5rem;
+    color: var(--text-primary);
+}
+
+@media screen and (width< 1200px) {
+    .nav-list .nav-list-items {
+        flex-direction: column;
+    }
+
+    .nav-list .nav-list-items li {
+        margin: 1rem 0;
+    }
+
+    .nav-list .nav-list-items li:hover {
+        transform: scale(1.1);
+        ;
+    }
+    .header-content {
+        display: block;
+        margin: 0;
+    }
+}
+
+@media screen and (width> 1200px) {
+    .logo:not(.sec) {
+        position: relative;
+        transform: translateX(-100%);
+    }
+}
+
+@media screen and (width <1500px) {
+    .logo:not(.sec) {
+        position: relative;
+        transform: translateX(-8%);
+    }
+
+    @media screen and (width <750px) {
+        .logo:not(.sec) {
+            position: relative;
+            transform: translateX(0%);
+        }
+    }
+}
+.header-content .icon {
+    display: none;
+    float: inline-end;
+    position: relative;
+    transform: translate(50%, 100%);
+    font-size: 2rem;
+    color: var(--text-dark);
+}
+
+@media screen and (width < 1200px) {
+    .nav-list-items li:not(:first-child) {
+        display: none;
+    }
+
+    .header-content .icon {
+        float: right;
+        display: block;
+    }
+}
+
+/*Sidenav css*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--white);
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: var(--text-dark);
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: var(--white);
+
+}
+
+.sidenav .closebtn:hover {
+    color: var(--primary-color-25);
+}
+
+.effect {
+    animation: turn .5s linear;
+}
+
+@keyframes turn {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* body section  */
+
+.welcome-msg {
+    display: grid;
+    justify-content: end;
+    text-align: end;
+}
+
+.greetings {
+    display: inline-block;
+}
+
+.info {
+    display: flex;
+    max-width: 250px;
+}
+
+/* weather informations  */
+
+.weather-data {
+    display: flex;
+    gap: 20px;
+}
+
+.first {
+    flex-grow: 1;
+}
+
+.second {
+    flex-grow: 2;
+}
+
+.third {
+    flex-grow: 1;
+}
+
+.x-data {
+    text-wrap: nowrap;
+}
+
+.time-date .time {
+    font-weight: bold;
+}
+
+.time-date .date {
+    font-size: 12px;
+}
+
+.large-data {
+    font-size: 10rem;
+}
+
+.large-data:after {
+    content: '\00b0';
+    font-size: 90px;
+    position: absolute;
+    transform: translateX(-30%);
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.location:before {
+    content: url(/img/location.svg);
+    width: 70%;
+}
+
+.location input[type=text],
+select,
+textarea {
+    border: none;
+    width: 150px;
+}
+
+
+@media screen and (width < 768px) {
+    .weather-data {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .location input[type=text],
+    select,
+    textarea {
+        position: relative;
+        left: -50%;
+    }
+
+    .row {
+        gap: 2rem;
+    }
+}
+
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+.col-one:before {
+    content: url(/img/bi_snow.svg);
+    position: relative;
+    left: -15%;
+    top: 3.5px;
+}
+
+.col-two:before {
+    content: url(/img/ph_wind.svg);
+    position: relative;
+    left: -15%;
+    top: 3.5px;
+}
+
+.col-three:before {
+    content: url(/img/ph_sun.svg);
+    position: relative;
+    left: -15%;
+    top: 3.5px;
+}
+
+/* News section css */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+
+}
+
+.card-content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.card-content>div:nth-of-type(1) {
+    align-self: flex-start;
+}
+
+@media screen and (width <1000px) {
+        .card-content {
+                flex-direction: column;
+                width: 100%;
+            }
+}

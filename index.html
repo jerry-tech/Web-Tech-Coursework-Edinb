@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variable.css">
+    <script src="js/server.js"></script>
+    <title>Polluguard</title>
+</head>
+
+<body>
+    <aside>
+        <div id="sideNav" class="sidenav">
+
+            <div class="top-cover">
+                <div class="logo sec" style="padding: 0 1rem;">
+                    <img src="img/logo.svg" alt="" class="logo-img">
+
+                </div>
+
+                <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
+            </div>
+
+            <a href="#">Pollution Index</a>
+            <a href="#">Reporting</a>
+            <a href="#">About</a>
+            <a href="#">Credits</a>
+        </div>
+    </aside>
+
+    <main class="container">
+
+        <section class="header">
+            <div class="mt-4 header-content">
+                <!-- <h1 class="logo">Polluguard</h1> -->
+
+                <div class="nav-list">
+                    <ul class="nav-list-items" id="topNav">
+                        <li class="logo">
+                            <img src="img/logo.svg" alt="">
+                        </li>
+                        <li><a href="about.php">Pollution Index</a></li>
+                        <li><a href="contact.php">Report Pollution</a></li>
+                        <li><a href="contact.php">About</a></li>
+                        <li>
+                            <a href="login.php">Credits</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="openClose()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </section>
+
+
+        <section class="body">
+
+            <div class="welcome-msg mt-4">
+                <div class="greetings">
+                    <h2>Good Morning</h2>
+                </div>
+                <small class="info">
+                    Pollution is bad for our ecosystem
+                    Be informed, take action!
+                </small>
+            </div>
+
+            <div class="weather-data mt-4">
+                <div class="first">
+                    <div class="x-data">
+                        <div class="time-date">
+                            <div class="time">
+                                8:35 AM
+                            </div>
+                            <small class="date">
+                                Wed, Feb 14, 2024
+                            </small>
+                        </div>
+
+                        <div class="large-data">
+                            X
+                        </div>
+
+                        <div class="location">
+                            <form action="/action_page.php">
+
+                                <div class="row">
+                                    <div class="">
+                                        <select id="country" name="country">
+                                            <option value="australia">Australia</option>
+                                            <option value="canada">Canada</option>
+                                            <option value="usa">USA</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="second">
+                    <img src="/img/center-img.png" alt="" style="width: 100%;">
+                </div>
+                <div class="third">
+                    <div class="row">
+                        <div class="col-one">X</div>
+                        <div class="col-two">X2</div>
+                        <div class="col-three">X-3</div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="news mt-4">
+            <div class="card">
+                <div class="card-content">
+                    <div>
+                        <h3>
+                            News
+                        </h3>
+                        <span style="text-wrap: nowrap;">about Pollution</span>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="/img/news-1.png" alt="">
+                            <figcaption>
+                                <small>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </small>
+                            </figcaption>
+                        </figure>
+
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="/img/news-2.png" alt="">
+                            <figcaption>
+                                <small>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </small>
+                            </figcaption>
+                        </figure>
+                    </div>
+
+                    <div>
+                        <figure>
+                            <img src="/img/news-3.png" alt="">
+                            <figcaption>
+                                <small>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </small>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="footer">
+
+    </section>
+</body>
+
+</html>
