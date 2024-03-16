@@ -1,12 +1,5 @@
-html,
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: monospace, 'Courier New', Courier;
+    font-family: Tahoma, sans-serif;
     font-size: 16px;
     background: url(/img/design.svg) no-repeat top left;
     background-size: clamp(5rem, 50vw, 30rem);
@@ -16,25 +9,6 @@ body {
 main {
     margin-bottom: 4rem !important;
 }
-
-/* text class */
-h1,
-h2 {
-    margin: 0;
-    -webkit-text-stroke: .5px black;
-}
-
-h3 {
-    margin: 0;
-}
-
-i {
-    font-size: smaller;
-    letter-spacing: -1.5px;
-    float: inline-end;
-    -webkit-text-stroke: .15px black;
-}
-
 
 /* container class */
 
@@ -139,6 +113,7 @@ i {
     margin: auto;
     padding: 1rem 0;
 }
+
 .nav-list .nav-list-items li .logo {
     margin: 0;
 }
@@ -168,6 +143,8 @@ i {
         transform: scale(1.1);
         ;
     }
+
+
     .header-content {
         display: block;
         margin: 0;
@@ -194,6 +171,7 @@ i {
         }
     }
 }
+
 .header-content .icon {
     display: none;
     float: inline-end;
@@ -214,7 +192,7 @@ i {
     }
 }
 
-/*Sidenav css*/
+/* Sidenav css */
 .sidenav {
     height: 100%;
     width: 0;
@@ -322,6 +300,7 @@ i {
 }
 
 .large-data {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 10rem;
 }
 
@@ -336,6 +315,8 @@ i {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* position: relative; */
+    /* top: -30px; */
 }
 
 
@@ -402,7 +383,8 @@ textarea {
     top: 3.5px;
 }
 
-/* News section css */
+/* news section css */
+
 .card {
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -423,8 +405,8 @@ textarea {
 }
 
 @media screen and (width <1000px) {
-        .card-content {
-                flex-direction: column;
-                width: 100%;
-            }
+    .card-content {
+        flex-direction: column;
+        width: 100%;
+    }
 }

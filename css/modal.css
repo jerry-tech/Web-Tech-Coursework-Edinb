@@ -1,0 +1,141 @@
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: 10% auto;
+    padding: 40px 30px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    position: relative;
+    top: -30px;
+    right: -18px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        margin: 20% auto;
+    }
+
+    .apply_flex {
+        display: none;
+    }
+}
+
+/* Styling for form and buttons */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 0 0;
+    display: inline-block;
+    border: 1px solid var(--primary-color-50);
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: var(--dark_75);
+}
+
+input[type="text"]::placeholder {
+    font-size: 10px;
+    color: var(--dark_50);
+}
+
+input[type="text"]:focus {
+    outline: 2px solid var(--primary-color-25);
+}
+
+button {
+    background-color: var(--dark);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 5px;
+    margin: 10px 0 0 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+.location_permission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.location_permission img {
+    width: 70%;
+}
+
+.block,
+.allow {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.allow {
+    background-color: #4CAF50;
+}
+
+.block:hover,
+.allow:hover {
+    opacity: 0.8;
+}
+
+/* Grid system  */
+
+.row {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 2rem;
+}
+
+.col {
+    flex: 1;
+}
+
+.apply_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (width < 768px) {
+
+    .apply_flex {
+        display: none;
+    }
+}
+
+.hide {
+    display: none !important;
+}
