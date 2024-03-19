@@ -7,11 +7,45 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/variable.css">
-    <script src="server.js"></script>
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="./js/server.js"></script>
     <title>Polluguard</title>
 </head>
 
 <body>
+
+    <!-- Start of Personalization Modal Page -->
+
+    <div id="myModal" class="modal hide"> 
+        <div class="modal-content">
+            <span class="close_modal" onclick="closeModal()">&times;</span>
+            <div class="row_modal">
+                <div class="col_modal" style="text-align: center;">
+                    <div id="cookie_text">
+                    <span>We use the smallest Cookies</span>
+                    <small class="very_small_font">Let's meet you for a more personal experience</small>
+                    </div>
+                    <form method="post" autocomplete="on" id="personalizationForm">
+                        <input type="text" id="personal_name" name="name" placeholder="Your Name" required>
+                        <button id="button_modal" type="submit">Submit</button>
+                    </form>
+                    <p class="location-request very_small_font" style="text-align: left;">You will see a pop up asking
+                        for your location. Please click accept for
+                        an accurate pollution index reporting based on your location.</p>
+                    <div class="location_permission">
+                        <img src="img/location_cookie.png" alt="">
+                    </div>
+                </div>
+                <div class="col_modal apply_flex_modal">
+                    <img src="img/cookie.svg" alt="" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End of Personalization Modal Page -->
+
+
     <aside>
         <div id="sideNav" class="sidenav">
 
@@ -169,6 +203,10 @@
     <section class="footer">
 
     </section>
+
+     <!-- Javascript -->
+     <script src="./js/generic.js" type="module"></script>
+     <script src="./js/logic.js" type="module"></script>
 </body>
 
 </html>
