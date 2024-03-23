@@ -44,7 +44,11 @@ export const getSessionData = (key, isJson) => {
 //Function to get current time
 export const getCurrentTime = () => {
   let hour = currentDate.getHours();
-  const minute = currentDate.getMinutes();
+  let minute = currentDate.getMinutes();
+
+  hour = hour < 10 ? '0' + hour : hour;
+
+  minute = minute < 10 ? '0' + minute : minute;
 
   const ampm = hour >= 12 ? 'PM' : 'AM';
 

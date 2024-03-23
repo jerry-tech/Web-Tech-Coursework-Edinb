@@ -24,3 +24,27 @@ function closeModal() {
     closeBtn.classList.add("hide");
   }
 }
+
+function hideDiv() {
+  // Correctly use getElementById without the '#' prefix
+  var hidden = document.getElementById("toBeHidden");
+
+  // Function to check the window width and hide/show the div
+  function checkWindowSize() {
+    if (window.innerWidth < 900) {
+      hidden.classList.add("hide");
+      console.log("hidden");
+    } else {
+      hidden.classList.remove("hide");
+      console.log("seen");
+    }
+  }
+
+  // Listen for resize events
+  window.addEventListener("resize", checkWindowSize);
+
+  // Check the window size immediately in case it's already less than 900px
+  checkWindowSize();
+}
+
+hideDiv();
