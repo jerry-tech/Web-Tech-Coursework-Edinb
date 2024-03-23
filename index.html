@@ -97,7 +97,7 @@
 
             <div class="welcome-msg mt-4">
                 <div class="greetings">
-                    <h2>Good Morning</h2>
+                    <h2 id="greetings">Good Morning</h2>
                 </div>
                 <small class="info">
                     Pollution is bad for our ecosystem
@@ -109,20 +109,20 @@
                 <div class="first">
                     <div class="x-data">
                         <div class="time-date">
-                            <div class="time">
+                            <div id="current_time" class="time">
                                 8:35 AM
                             </div>
-                            <small class="date">
+                            <small id="current_date" class="date">
                                 Wed, Feb 14, 2024
                             </small>
                         </div>
 
-                        <div class="large-data">
-                            X
+                        <div id="temperatureInfo" class="large-data">
+                            18
                         </div>
 
                         <div class="location">
-                            <form action="/action_page.php">
+                            <form>
 
                                 <div class="row">
                                     <div class="">
@@ -143,9 +143,9 @@
                 </div>
                 <div class="third">
                     <div class="row">
-                        <div class="col-one">X</div>
-                        <div class="col-two">X2</div>
-                        <div class="col-three">X-3</div>
+                        <div id="elevation" class="col-one">X</div>
+                        <div id="windSpeedInfo" class="col-two">X2</div>
+                        <div id="humidityInfo" class="col-three">X-3</div>
                     </div>
                 </div>
             </div>
@@ -205,6 +205,7 @@
     </section>
 
      <!-- Javascript -->
+     <script src="./js/constant.js" type="module"></script>
      <script src="./js/generic.js" type="module"></script>
      <script src="./js/logic.js" type="module"></script>
 </body>

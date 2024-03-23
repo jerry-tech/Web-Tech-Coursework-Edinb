@@ -300,13 +300,11 @@ main {
 }
 
 .large-data {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 10rem;
+    font-family: Courier, monospace;
+    font-size: 5rem;
 }
 
 .large-data:after {
-    content: '\00b0';
-    font-size: 90px;
     position: absolute;
     transform: translateX(-30%);
 }
