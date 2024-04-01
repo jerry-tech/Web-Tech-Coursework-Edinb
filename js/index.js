@@ -52,7 +52,10 @@ personalizationForm.addEventListener("submit", (e) => {
 
 });
 
-//Using promises API to call current weather open meteo api
+/**
+ * Calling the function to call the current weather api..
+ * @param {WeatherData} weatherData - An instance of WeatherData class containing parsed weather data.
+ */
 const callCurrentWeatherAPI = () => {
 
     const locationData = getSessionData(GEOLOCATION_KEY, true);
@@ -70,19 +73,13 @@ const callCurrentWeatherAPI = () => {
             console.error('Error fetching data:', error);
         });
 }
+//calling the function to call the current weather api.
+callCurrentWeatherAPI();
 
-/**
- * Updates the weather container with the parsed weather data.
- * @param {WeatherData} weatherData - An instance of WeatherData class containing parsed weather data.
- */
 const updateWeatherUI = (weatherData) => {
     document.getElementById('elevation').textContent = `${weatherData.elevation + ' meters'}`;
     document.getElementById('windSpeedInfo').textContent = `${weatherData.current.windSpeed10m}${weatherData.currentUnits.windSpeed10m}`;
     document.getElementById('humidityInfo').textContent = `${weatherData.current.relativeHumidity2m}${weatherData.currentUnits.relativeHumidity2m}`;
     document.getElementById('temperatureInfo').textContent = `${weatherData.current.temperature2m}${weatherData.currentUnits.temperature2m}`;
 }
-
-
-//calling the function to call the current weather api.
-callCurrentWeatherAPI();
 
