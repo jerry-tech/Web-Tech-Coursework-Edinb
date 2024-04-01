@@ -5,6 +5,10 @@
     --primary-color: #444CF7;
     --primary-color-50: #444CF750;
     --primary-color-25: #444CF725;
+    --table_header_color: #98A2B3;
+    --table_header_color_25: #98A2B325;
+    --table_header_color_50: #98A2B350;
+    --danger: #F62C57;
 
     --white: #fff;
 
@@ -12,5 +16,6 @@
     --dark_75: #2A2A2A90;
     --dark_50: #2A2A2A50;
     --dark_25: #2A2A2A25;
+    --table_width: 20%;
     /* for buttons and other backgrounds except text */
 }
