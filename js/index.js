@@ -28,7 +28,6 @@ if(document.getElementById('current_time')){
 
 //Getting Cookie    
 let personalizationName = getCookie(USERNAME_COOKIE_KEY);
-
 if (personalizationName === "") {
     //requesting User loaction
     getUserLocation();
@@ -43,14 +42,14 @@ if (personalizationName === "") {
 // Cookie Modal Page Logic
 personalizationForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     //Getting value from form field
     let personalizationName = document.getElementById("personal_name").value;
     if (personalizationName != "" && personalizationName != null) {
         setCookie(USERNAME_COOKIE_KEY, personalizationName, 365);
     }
-
 });
+
+
 
 /**
  * Calling the function to call the current weather api..

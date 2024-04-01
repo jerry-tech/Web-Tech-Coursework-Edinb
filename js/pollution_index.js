@@ -8,7 +8,10 @@ document.getElementById('current_time').textContent = getCurrentTime();
 
 
 
-
+/**
+ * Calling the function to call the current weather api..
+ * @param {WeatherData} weatherData - An instance of WeatherData class containing parsed weather data.
+ */
 const callCurrentWeatherAPI = () => {
     const locationData = getSessionData(GEOLOCATION_KEY, true);
 
@@ -26,11 +29,8 @@ const callCurrentWeatherAPI = () => {
             console.error('Error fetching data:', error);
         });
 }
-
-/**
- * Updates the weather container with the parsed weather data.
- * @param {WeatherData} weatherData - An instance of WeatherData class containing parsed weather data.
- */
+//
+callCurrentWeatherAPI();
 const updateWeatherUI = (weatherData) => {
     document.getElementById('temInFahrenheit').textContent = `${celsiusToFahrenheit(weatherData.current.temperature2m)}${'°F'}`;
     document.getElementById('temperatureInfo').textContent = `Feels like ${weatherData.current.temperature2m}${weatherData.currentUnits.temperature2m}`;
@@ -38,14 +38,16 @@ const updateWeatherUI = (weatherData) => {
     document.getElementById('temperatureInfoLow').textContent = `Low: ${weatherData.daily.temperature2mMin}${weatherData.dailyUnits.temperature2mMin}`;
 }
 
-//calling the function to call the current weather api.
-callCurrentWeatherAPI();
 
 
 
 
 
-//Using promises API to call pollution history open meteo api
+
+/**
+ * Using promises API to call pollution history open meteo api
+ * @param {pollutionData} PollutionData - An instance of PollutionData class containing parsed pollutionData data.
+ */
 const callPollutionHistoryAPI = () => {
 
     const locationData = getSessionData(GEOLOCATION_KEY, true);
@@ -57,18 +59,15 @@ const callPollutionHistoryAPI = () => {
     fetch(`${AIR_QUALITY_BASE_URL}${POLLUTION_WEATHER_URL}${'&latitude=' + latitude}${'&longitude=' + longitude}`)
         .then(response => response.json())
         .then(data => {
-            console.log(data)
             const pollutionData = parsePollutionIndexResponse(data);
-            console.log(pollutionData)
             updatePollutionWeatherUI(pollutionData);
         })
         .catch(error => {
             console.error('Error fetching data:', error);
         });
 }
-
+//
 callPollutionHistoryAPI();
-
 const updatePollutionWeatherUI = (pollutionData) => {
     document.getElementById('pm10').textContent = `${pollutionData.current.pm10}${pollutionData.currentUnits.pm10}`;
     document.getElementById('pm2_5').textContent = `${pollutionData.current.pm25}${pollutionData.currentUnits.pm25}`;
