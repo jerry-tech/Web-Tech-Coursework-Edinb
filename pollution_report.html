@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pollution_report.css">
+
+    <title>Polluguard</title>
+</head>
+
+<body class="pr">
+    <aside>
+        <div id="sideNav" class="sidenav">
+
+            <div class="top-cover">
+                <div class="logo sec" style="padding: 0 1rem;">
+                    <img src="img/logo.svg" alt="" class="logo-img">
+
+                </div>
+
+                <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
+            </div>
+
+            <a href="/modal.html">Pollution Index</a>
+            <a href="#">Reporting</a>
+            <a href="#">About</a>
+            <a href="#">Credits</a>
+        </div>
+    </aside>
+
+    <div class="side_decor">
+
+    </div>
+
+    <main class="container" style="margin-bottom: 1.5rem !important;">
+
+        <section class="header">
+            <div class="mt-4 header-content">
+                <!-- <h1 class="logo">Polluguard</h1> -->
+
+                <div class="nav-list">
+                    <ul class="nav-list-items" id="topNav">
+                        <li class="logo">
+                            <img src="img/logo.svg" alt="">
+                        </li>
+                        <li><a href="/pollution_index.html">Pollution Index</a></li>
+                        <li><a href="contact.php">Report Pollution</a></li>
+                        <li><a href="contact.php">About</a></li>
+                        <li>
+                            <a href="login.php">Credits</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="openClose()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div class="container_variable_2">
+
+        <div class="table_top row justify-content-between align-items-center">
+            <h2>Pollution Report</h2>
+            <button class="btn report_btn">Report Pollution</button>
+        </div>
+
+        <div class="mb-1">
+            <form class="card" action="" method="get">
+                <div class="row" style="font-size: medium; font-weight: 300;">
+                    <div class="col">
+                        <div class="label" for="search">What are you looking for?</div>
+                        <input type="text" id="search" placeholder="Search everything">
+                    </div>
+                    <div class="col">
+                        <div class="label" for="search">Pollution type</div>
+                        <select name="search" id="search" type="options">
+                            <option value="Air">Air</option>
+                            <option value="Water">Water</option>
+                            <option value="Land">Land</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <div class="label" for="search">Status</div>
+                        <select name="search" id="search" type="options">
+                            <option value="Closed">Closed</option>
+                            <option value="Pending">Pending</option>
+                        </select>
+                    </div>
+                    <div class="col-auto" style="display: flex; align-items: center;">
+                        <button type="submit" class="btn">Search</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>S/N</th>
+                    <th>Reporter</th>
+                    <th>Location</th>
+                    <th>Pollution Type</th>
+                    <th>Date Reported</th>
+                    <th>Status</th>
+                    <th>More</th>
+                </tr>
+            </thead>
+            <tr>
+                <td data-label="Company">1</td>
+                <td data-label="Contact">Maria Anders</td>
+                <td data-label="Country">Germany</td>
+                <td data-label="Company">Alfreds Futterkiste</td>
+                <td data-label="Company">Maria Anders</td>
+                <td data-label="Status">
+                    <div status="open">
+                        open
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+
+            </tr>
+            <tr>
+                <td data-label="Company">2</td>
+                <td data-label="Contact">Maria Anders</td>
+                <td data-label="Country">Germany</td>
+                <td data-label="Company">Alfreds Futterkiste</td>
+                <td data-label="Company">Maria Anders</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+
+            </tr>
+            <tr>
+                <td data-label="Company">3</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="Company">4</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="Company">5</td>
+                <td>Helen Bennett</td>
+                <td>UK</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="Company">6</td>
+                <td>Yoshi Tannamuri</td>
+                <td>Canada</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="Company">7</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="open">
+                        open
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="S/N">8</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="S/N">9</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="closed">
+                        Closed
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+            <tr>
+                <td data-label="S/N">10</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td data-label="Status">
+                    <div status="open">
+                        open
+                    </div>
+                </td>
+                <td><button type="button" class="btn-dark">View</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <section class="footer">
+
+    </section>
+
+    <script src="server.js"></script>
+</body>
+
+</html>
