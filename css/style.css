@@ -1,11 +1,14 @@
-body:not(.db, .pr) {
+body{
     font-family: Tahoma, sans-serif;
     font-size: 16px;
+    width: 100vw;
+    height: 100vh;
+}
+body:not(.db, .pr) {   
     background: url(/img/design.svg) no-repeat top left;
     background-size: clamp(5rem, 50vw, 30rem);
     padding-right: 3rem;
-    width: 100vw;
-    height: 100vh;
+
 }
 
 main {
@@ -579,11 +582,10 @@ input[type="text"]::placeholder {
 }
 
 .label {
-    font-size: .8rem;
+    font-size: 1rem;
     font-weight: 300;
     color: var(--text-dark);
     margin-top: .2rem;
-    /* padding-bottom: .5rem; */
 }
 
 select[type=options] {
