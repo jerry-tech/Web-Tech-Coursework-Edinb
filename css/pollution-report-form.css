@@ -1,0 +1,22 @@
+textarea {
+    display: block;
+    width: -webkit-fill-available;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#name-label {
+    font-weight: 300;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.container_variable_2 {
+    padding: 0 15rem;
+}
+
+@media screen and (width < 976px) {
+    .container_variable_2 {
+        padding: 0 1rem;
+    }
+}

@@ -1,0 +1,89 @@
+.side_decor {
+    width: var(--table_width);
+    height: 100%;
+    background: url("/img/polluter.svg") no-repeat bottom right;
+    background-color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.container_variable_2 {
+    margin-left: var(--table_width);
+    padding: 0 1rem;
+}
+
+@media screen and (width < 1200px) {
+    .container_variable_2 {
+        margin-left: initial;
+    }
+
+    .side_decor {
+        display: none;
+    }
+
+}
+
+@media screen and (width < 767px) {
+    [data-label='Status'] {
+        display: flex;
+        justify-content: end;
+    }
+}
+
+.btn {
+    padding: 0.5rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    align-self: end;
+    margin: 2rem 0;
+}
+
+.btn:hover {
+    opacity: 90%;
+}
+
+.report_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.report_btn::before {
+    content: url("/img/iconoir_megaphone.svg");
+    margin-right: .5rem;
+}
+
+
+
+[status='closed'],
+[status='open'] {
+    background-color: var(--dark_25);
+    /* display: flex; */
+    padding: .2rem .5rem;
+    width: max-content;
+    border-radius: 10px;
+}
+
+[status='closed']::before {
+    content: ' ';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: .2rem;
+    background-color: var(--primary-color);
+}
+
+[status='open']::before {
+    content: ' ';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: .2rem;
+    background-color: var(--danger);
+}
