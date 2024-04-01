@@ -1,6 +1,6 @@
 import { setCookie, getCookie, getCurrentDate, getCurrentTime, getUserLocation, getSessionData } from './utils.js';
 import { USERNAME_COOKIE_KEY, GEOLOCATION_KEY, DEFAULT_LONGITUDE, DEFAULT_LATITUDE, BASE_URL, CURRENT_WEATHER_URL } from './constant.js';
-import { WeatherData, parseCurrentWeatherData } from './models/model.js';
+import { WeatherData, parseCurrentWeatherData } from './models/current_weather_model.js';
 
 
 const greeting = () => {
@@ -14,11 +14,17 @@ const greeting = () => {
     return 'Good Evening';
 }
 
-document.getElementById('greetings').textContent = greeting();
+if (document.getElementById('greetings')) {
+    document.getElementById('greetings').textContent = greeting();
+}
 
 // Update the content of the HTML element with id 'current_time' && 'current_date'
-document.getElementById('current_date').textContent = getCurrentDate();
-document.getElementById('current_time').textContent = getCurrentTime();
+if(document.getElementById('current_date')){
+  document.getElementById('current_date').textContent = getCurrentDate();  
+}
+if(document.getElementById('current_time')){
+  document.getElementById('current_time').textContent = getCurrentTime();
+}
 
 //Getting Cookie    
 let personalizationName = getCookie(USERNAME_COOKIE_KEY);
@@ -51,9 +57,8 @@ const callCurrentWeatherAPI = () => {
 
     const locationData = getSessionData(GEOLOCATION_KEY, true);
 
-    let longitude = locationData.longitude || DEFAULT_LONGITUDE;
-    let latitude = locationData.latitude || DEFAULT_LATITUDE;
-
+    let longitude = locationData != undefined ? locationData.longitude : DEFAULT_LONGITUDE;
+    let latitude = locationData != undefined ? locationData.latitude : DEFAULT_LATITUDE;
 
     fetch(`${BASE_URL}${CURRENT_WEATHER_URL}${'&latitude=' + latitude}${'&longitude=' + longitude}`)
         .then(response => response.json())

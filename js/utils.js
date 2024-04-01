@@ -38,7 +38,7 @@ export const setSessionData = (key, value, isJson) => {
 
 // Function to get data from sessionStorage
 export const getSessionData = (key, isJson) => {
-  return isJson ? JSON.parse(sessionStorage.getItem(key) || '') : sessionStorage.getItem(key) || '';
+  return isJson ? JSON.parse(sessionStorage.getItem(key) != undefined || sessionStorage.getItem(key) != '' ? sessionStorage.getItem(key) : '') : sessionStorage.getItem(key) || '';
 }
 
 //Function to get current time
@@ -110,3 +110,9 @@ export const getUserLocation = () => {
     options
   );
 }
+
+//Convert Celcius to Fahrenheit
+export const celsiusToFahrenheit = (celsius) =>{
+  return (celsius * 9/5) + 32;
+}
+  

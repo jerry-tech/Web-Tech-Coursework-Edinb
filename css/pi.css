@@ -97,9 +97,6 @@ body {
     margin: auto;
     padding: 1rem 0;
 }
-
-.nav-list .nav-list-items li {}
-
 .nav-list .nav-list-items li .logo {
     margin: 0;
 }
@@ -213,9 +210,14 @@ body {
     }
 }
 
+.large-data-farenheit {
+    font-family: Courier, monospace;
+    font-size: 4rem;
+}
+
 .large-data {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 6rem;
+    font-family: Courier, monospace;
+    font-size: 5rem;
 }
 
 .large-data:after {
@@ -227,10 +229,6 @@ body {
 
 .col .large-data {
     text-align: center;
-}
-
-.measure::after {
-    content: 'o';
 }
 
 .img-clip {
