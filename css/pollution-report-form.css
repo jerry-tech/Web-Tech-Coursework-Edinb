@@ -12,7 +12,7 @@ textarea {
 }
 
 .container_variable_2 {
-    padding: 5rem 15rem;
+    padding: .8rem 15rem;
     margin-left: var(--table_width);
 }
 

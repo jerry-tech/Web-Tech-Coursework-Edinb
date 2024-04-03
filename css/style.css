@@ -1,10 +1,11 @@
-body{
+body {
     font-family: Tahoma, sans-serif;
     font-size: 16px;
     width: 100vw;
     height: 100vh;
 }
-body:not(.db, .pr) {   
+
+body:not(.db, .pr) {
     background: url(/img/design.svg) no-repeat top left;
     background-size: clamp(5rem, 50vw, 30rem);
     padding-right: 3rem;
@@ -13,6 +14,19 @@ body:not(.db, .pr) {
 
 main {
     margin-bottom: 4rem !important;
+}
+
+/* Require and Optional */
+
+.required::after {
+    content: ' *';
+    color: red;
+}
+
+.optional::after {
+    content: ' (optional)';
+    font-size: 0.6em;
+    opacity: 0.5;
 }
 
 /* container class */
@@ -308,6 +322,7 @@ main {
     position: absolute;
     transform: translateX(-30%);
 }
+
 .location {
     display: flex;
     align-items: center;
@@ -356,7 +371,7 @@ textarea {
     font-weight: bold;
 }
 
-.column_stat{
+.column_stat {
     display: flex;
     flex-direction: column;
     gap: 3rem;

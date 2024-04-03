@@ -115,4 +115,36 @@ export const getUserLocation = () => {
 export const celsiusToFahrenheit = (celsius) =>{
   return (celsius * 9/5) + 32;
 }
-  
+
+//Titlecase
+export const toTitleCase = (str) => {
+  return str.replace(/\w\S*/g, function(txt) {
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+}
+
+// Function to open the IndexedDB database
+export const openDatabase = () => {
+  return new Promise((resolve, reject) => {
+      var request = window.indexedDB.open('PolluguardDB', 1);
+
+      request.onupgradeneeded = function(event) {
+          var db = event.target.result;
+          var objectStore = db.createObjectStore('form_data', { keyPath: 'id', autoIncrement:true });
+          objectStore.createIndex('countryAlpha3', 'countryAlpha3', { unique: false });
+          objectStore.createIndex('stateCode', 'stateCode', { unique: false });
+          objectStore.createIndex('pollutionType', 'pollutionType', { unique: false });
+          objectStore.createIndex('phone', 'phone', { unique: false });
+          objectStore.createIndex('description', 'description', { unique: false });
+          objectStore.createIndex('image', 'image', { unique: false });
+      };
+
+      request.onsuccess = function(event) {
+          resolve(event.target.result);
+      };
+
+      request.onerror = function(event) {
+          reject(event.target.error);
+      };
+  });
+}

@@ -79,37 +79,47 @@
 
         <form id="survey-form" class="mb-3">
 
-            <div class="label" for="search">Location</div>
-            <br>
-            <select name="search" id="search" type="options">
-                <option value="l1">Abuja</option>
-                <option value="l2">Abakaliki</option>
-                <option value="l3">Bayelsa</option>
+            <div class="label required" for="countrySelect">Country</div>
+            <select class="mb-1" name="search" id="countrySelect" type="options" required>
+                <option value="l1">Select Country</option>
+            </select>
+            <div class="label required" for="stateSelect">State</div>
+            <select class="mb-1" name="search" id="stateSelect" type="options" required>
+                <option value="l1">Select State</option>
+            </select>
+            <div class="label required" for="pollutionType">Pollution Type </div>
+            <select name="search" class="mb-1" id="pollutionType" type="options">
+                <option value="Air">Air</option>
+                <option value="Land">Land</option>
+                <option value="Water">Water</option>
+                <option value="Noise">Noise</option>
+                <option value="Light">Light</option>
+                <option value="Thermal">Thermal</option>
+                <option value="Radioactive">Radioactive</option>
+                <option value="Plastic">Plastic</option>
+                <option value="Others">Others</option>
             </select>
 
-            <div class="label" for="search">Pollution Type</div>
-            <br>
-            <select name="search" id="search" type="options">
-                <option value="l1">Air</option>
-                <option value="l2">Land</option>
-                <option value="l2">Water</option>
-            </select>
+            <label for="phone" class="label">Phone (optional)</label>
+            <input class="mb-1" type="tel" id="phone"
+            placeholder="+2347017525....">     
 
-            <label id="name-label" for="name" class="label">Phone (optional) <input type="text" id="name" required
-                    placeholder="Phone number"></label>
+            <label for="image" class="label required">Image </label>
+            <input type="file"  id="image" accept="image/*"
+                    placeholder="Upload image">
+            <sub>Accepted format png, jpg, jpeg not more than 500kb.</i>
 
-            <label id="name-label" for="name" class="label">Image <input type="file" id="name" required
-                    placeholder="Upload image"></label>
-
-            <div style="width: 100%;">
-                <p style="font-size: .8rem; font-weight: 300; margin: 0; margin-top: 0.5rem;">Have something more to
-                    share?</p>
-                <textarea placeholder="Tell us more..." rows="5"></textarea>
+            <div style="width: 100%;" class="mt-2">
+                <p class="required" style="font-size: .9rem; font-weight: 300;">Have something more to share?</p>
+                <textarea placeholder="Tell us more(maximum of 150 characters)..." rows="5" maxlength="150" id="additionalInfo"></textarea>
             </div>
 
 
             <div class="col-auto" style="display: flex; align-items: center;">
-                <button type="submit" class="btn-dark w-100" style="padding: .5rem 1rem;">Report</button>
+                <button type="submit" id="submitButton" class="btn-dark w-100" style="padding: .5rem 1rem;">
+                    <span id="buttonText">Report Pollution</span>
+                    <span id="loader" style="display: none;"><span class="fa fa-spinner fa-spin"></span></span>
+                </button>
             </div>
         </form>
     </div>
@@ -118,7 +128,7 @@
 
     </section>
 
-    <!-- <script src="./js/server.js"></script> -->
+    <script src="./js/pollution_form.js" type="module"></script>
 </body>
 
 </html>
