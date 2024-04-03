@@ -66,7 +66,7 @@ const isValidImage = (imageDocumentId) => {
 }
 
 // Function to store form data into IndexedDB
-const storeFormData = (countryAlpha2, stateCode, pollutionType, phone, image, description) => {
+const storeFormData = (countryAlpha3, stateCode, pollutionType, phone, image, description) => {
     openDatabase().then(db => {
         var transaction = db.transaction(['form_data'], 'readwrite');
         var objectStore = transaction.objectStore('form_data');
@@ -77,7 +77,7 @@ const storeFormData = (countryAlpha2, stateCode, pollutionType, phone, image, de
             var imageData = event.target.result;
 
             var formData = {
-                country: countryAlpha2,
+                countryAlpha3: countryAlpha3,
                 stateCode: stateCode,
                 pollutionType: pollutionType,
                 phone: phone,
@@ -122,7 +122,6 @@ const validateAndSaveFormValues = () => {
 
     // Show loader
     document.getElementById('submitButton').disabled = true;
-    document.getElementById('buttonText').style.display = 'none';
     document.getElementById('loader').style.display = 'inline';
 
     setTimeout(function() {
@@ -130,7 +129,6 @@ const validateAndSaveFormValues = () => {
 
          // Hide loader
         document.getElementById('submitButton').disabled = false;
-        document.getElementById('buttonText').style.display = 'inline';
         document.getElementById('loader').style.display = 'none';
     }, 1500);
 
