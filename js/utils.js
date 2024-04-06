@@ -134,8 +134,9 @@ export const openDatabase = () => {
           objectStore.createIndex('countryAlpha3', 'countryAlpha3', { unique: false });
           objectStore.createIndex('stateCode', 'stateCode', { unique: false });
           objectStore.createIndex('pollutionType', 'pollutionType', { unique: false });
-          objectStore.createIndex('phone', 'phone', { unique: false });
+          objectStore.createIndex('fullName', 'fullName', { unique: false });
           objectStore.createIndex('description', 'description', { unique: false });
+          objectStore.createIndex('createdAt', 'createdAt', { unique: false });
           objectStore.createIndex('image', 'image', { unique: false });
       };
 
@@ -147,4 +148,59 @@ export const openDatabase = () => {
           reject(event.target.error);
       };
   });
+}
+
+// Function to retrieve form data from IndexedDB
+export const retrieveFormDataFromDB = () => {
+  return new Promise((resolve, reject) => {
+      openDatabase().then(db => {
+          const transaction = db.transaction(['form_data'], 'readonly');
+          const objectStore = transaction.objectStore('form_data');
+          const getRequest = objectStore.getAll();
+
+          getRequest.onsuccess = function(event) {
+              const formDataArray = event.target.result;
+              resolve(formDataArray);
+          };
+
+          getRequest.onerror = function(event) {
+              reject(new Error('Error retrieving form data from IndexedDB.'));
+          };
+      }).catch(error => {
+          reject(error);
+      });
+  });
+}
+
+//Displaying of error messages as an alert
+export const displayError = (errorMessage) => {
+  const errorContainer = document.getElementById('errorContainer');
+  const errorMessageSpan = document.getElementById('errorMessage');
+  errorMessageSpan.textContent = errorMessage;
+  errorContainer.style.display = 'block';
+  setTimeout(()=>{
+    errorContainer.style.display = 'none';
+  }, 2500);
+}
+
+//format date and time
+export const formatDateTime = (dateString) => {
+  const date = new Date(dateString);
+  
+  // Format the date
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+
+  // Format the time
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+
+  // Convert hours to 12-hour format
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  const hours12 = hours % 12 || 12;
+
+  // Construct the formatted date and time string
+  return `${day}-${month}-${year} ${hours12}:${minutes}${ampm}`;
+
 }

@@ -26,7 +26,7 @@
 
             <a href="/pollution_index.html">Pollution Index</a>
             <a href="/pollution-report-form.html">Reporting</a>
-            <a href="#">About</a>
+            <a href="/pollution_report.html">About</a>
             <a href="#">Credits</a>
         </div>
     </aside>
@@ -64,7 +64,15 @@
     </main>
 
     <div class="container_variable_2">
+        <!-- Error Display Container -->
+        <div id="errorContainer" class="alert alert-danger mt-1 p-2" style="display: none;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <i class="fa fa-info-circle me-2" style="font-size: 25px;"></i>
 
+                <span style="margin-left: 10px;" id="errorMessage"></span>
+            </div>
+        </div>       
+          <!-- Ending Error Display Container --> 
         <div class="table_top mb-2">
             <h2>See it, Smell it, Report it.</h2>
             <br>
@@ -100,12 +108,12 @@
                 <option value="Others">Others</option>
             </select>
 
-            <label for="phone" class="label">Phone (optional)</label>
-            <input class="mb-1" type="tel" id="phone"
-            placeholder="+2347017525....">     
+            <label for="fullName" class="label">Full Name</label>
+            <input class="mb-1" type="text" id="fullName"
+            placeholder="John Doe" required>     
 
             <label for="image" class="label required">Image </label>
-            <input type="file"  id="image" accept="image/*"
+            <input type="file"  id="image" accept="image/*" 
                     placeholder="Upload image">
             <sub>Accepted format png, jpg, jpeg not more than 500kb.</i>
 
@@ -128,6 +136,7 @@
 
     </section>
 
+    <script src="./js/server.js"></script>
     <script src="./js/pollution_form.js" type="module"></script>
 </body>
 

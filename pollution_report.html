@@ -38,7 +38,7 @@
 
         <section class="header">
             <div class="mt-4 header-content">
-            
+
 
                 <div class="nav-list">
                     <ul class="nav-list-items" id="topNav">
@@ -63,34 +63,49 @@
     </main>
 
     <div class="container_variable_2">
+        <!-- Error Display Container -->
+        <div id="errorContainer" class="alert alert-danger mt-1 p-2" style="display: none;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <i class="fa fa-info-circle me-2" style="font-size: 25px;"></i>
 
-        <div class="table_top row justify-content-between align-items-center">
-            <h2>Pollution Report</h2>
-            <button class="btn report_btn">Report Pollution</button>
+                <span style="margin-left: 10px;" id="errorMessage"></span>
+            </div>
         </div>
+        <!-- Ending Error Display Container -->
+        <a href="/pollution-report-form.html"
+            class="no-text-decoration table_top row justify-content-between align-items-center">
+            <h1>Pollution Report</h1>
+            <button class="btn report_btn">Report Pollution</button>
+        </a>
 
         <div class="mb-1">
             <form class="card" action="" method="get">
                 <div class="row" style="font-size: medium; font-weight: 300;">
-                    <div class="col">
-                        <div class="label" for="search">What are you looking for?</div>
-                        <input type="text" id="search" placeholder="Search everything">
+                    <div class="col" style="width: 30%;">
+                        <div class="label" for="search">Full Name</div>
+                        <input type="text" id="search" placeholder="Search full name">
                     </div>
-                    <div class="col">
+                    <div class="col" style="width: 10%;">
                         <div class="label" for="search">Pollution type</div>
                         <select name="search" id="search" type="options">
                             <option value="Air">Air</option>
-                            <option value="Water">Water</option>
                             <option value="Land">Land</option>
+                            <option value="Water">Water</option>
+                            <option value="Noise">Noise</option>
+                            <option value="Light">Light</option>
+                            <option value="Thermal">Thermal</option>
+                            <option value="Radioactive">Radioactive</option>
+                            <option value="Plastic">Plastic</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>
-                    <div class="col">
+                    <!-- <div class="col">
                         <div class="label" for="search">Status</div>
                         <select name="search" id="search" type="options">
                             <option value="Closed">Closed</option>
                             <option value="Pending">Pending</option>
                         </select>
-                    </div>
+                    </div> -->
                     <div class="col-auto" style="display: flex; align-items: center;">
                         <button type="submit" class="btn">Search</button>
                     </div>
@@ -98,158 +113,43 @@
             </form>
         </div>
 
-        <table>
+        <div class="d-md-flex align-items-center justify-content-between">
+            <div class="mt-5 mb-2" id="table_record_total" style="font-size: 1.2em;">
+             Total: 0
+            </div>
+        </div>
+        <table id="dataTable">
             <thead>
                 <tr>
                     <th>S/N</th>
                     <th>Reporter</th>
-                    <th>Location</th>
+                    <th>Country</th>
+                    <th>State</th>
                     <th>Pollution Type</th>
                     <th>Date Reported</th>
-                    <th>Status</th>
                     <th>More</th>
                 </tr>
             </thead>
-            <tr>
-                <td data-label="Company">1</td>
-                <td data-label="Contact">Maria Anders</td>
-                <td data-label="Country">Germany</td>
-                <td data-label="Company">Alfreds Futterkiste</td>
-                <td data-label="Company">Maria Anders</td>
-                <td data-label="Status">
-                    <div status="open">
-                        open
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
+            <tbody>
 
-            </tr>
-            <tr>
-                <td data-label="Company">2</td>
-                <td data-label="Contact">Maria Anders</td>
-                <td data-label="Country">Germany</td>
-                <td data-label="Company">Alfreds Futterkiste</td>
-                <td data-label="Company">Maria Anders</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-
-            </tr>
-            <tr>
-                <td data-label="Company">3</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="Company">4</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="Company">5</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="Company">6</td>
-                <td>Yoshi Tannamuri</td>
-                <td>Canada</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="Company">7</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="open">
-                        open
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="S/N">8</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="S/N">9</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="closed">
-                        Closed
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
-            <tr>
-                <td data-label="S/N">10</td>
-                <td>Giovanni Rovelli</td>
-                <td>Italy</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td data-label="Status">
-                    <div status="open">
-                        open
-                    </div>
-                </td>
-                <td><button type="button" class="btn-dark">View</button></td>
-            </tr>
+                <!-- Data will be populated dynamically here -->
+            </tbody>
         </table>
-    </div>
+        <br>
+        <div id="noDataRow" style="display: none; text-align: center;">
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div id="noDataMessage" style="margin-bottom: 10px;">
+                    <img src="img/empty-set-slash-svgrepo-com.svg" class="me-2" style="width: 10%;"></i>
+                </div>
+                <div style="margin-top: auto; font-size: 1.5em;">No data available</div>
+            </div>
+        </div>
 
-    <section class="footer">
+        <section class="footer">
 
-    </section>
+        </section>
 
-    <script src="./js/server.js"></script>
+        <script src="./js/pollution_report.js" type="module"></script>
 </body>
 
 </html>

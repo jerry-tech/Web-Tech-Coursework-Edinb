@@ -1,6 +1,7 @@
 export const CURRENT_LOCATION_TIMEOUT = 10000;
 export const USERNAME_COOKIE_KEY = "username";
 export const GEOLOCATION_KEY = "GEOLOCATION_KEY";
+export const MAX_FILE_UPLOAD = 500 * 1024;
 
 //Third Party API'S 
 export const DEFAULT_LONGITUDE = 55.9533;

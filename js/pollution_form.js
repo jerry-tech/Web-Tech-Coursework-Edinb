@@ -1,4 +1,5 @@
-import { toTitleCase, openDatabase } from './utils.js';
+import { toTitleCase, openDatabase, displayError } from './utils.js';
+import { MAX_FILE_UPLOAD } from './constant.js';
 
 
 //Load Countries.json
@@ -54,69 +55,78 @@ document.getElementById('countrySelect').addEventListener('change', (event) => {
     populateStates(selectedCountry);
 });
 
-const isValidImage = (imageDocumentId) => {
-    var fileSize = image.files[0].size;
-    var maxSize = 500 * 1024; // Maximum size in bytes (500 KB)
-    if (fileSize > maxSize) {
-        alert("File size exceeds the limit of 500 KB.");
-        return false;
+//checking image size
+document.getElementById('image').addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    const maxSizeInBytes = MAX_FILE_UPLOAD;
+
+    if (file && file.size > maxSizeInBytes) {
+        displayError('Image size exceeds the maximum allowed size of 500 KB.');
+        event.target.value = '';
     }
+});
 
-    return true;
-}
 
-// Function to store form data into IndexedDB
-const storeFormData = (countryAlpha3, stateCode, pollutionType, phone, image, description) => {
-    openDatabase().then(db => {
-        var transaction = db.transaction(['form_data'], 'readwrite');
-        var objectStore = transaction.objectStore('form_data');
-
-        // Convert image file to ArrayBuffer
-        var reader = new FileReader();
+const storeFormData = async (countryAlpha3, stateCode, pollutionType, fullName, image, description) => {
+    try {
+        const reader = new FileReader();
         reader.onload = function (event) {
-            var imageData = event.target.result;
+            const imageData = event.target.result;
 
-            var formData = {
+            addFormData({
                 countryAlpha3: countryAlpha3,
                 stateCode: stateCode,
                 pollutionType: pollutionType,
-                phone: phone,
+                fullName: fullName,
                 description: description,
+                createdAt: new Date(),
                 image: imageData
-            };
-
-            var request = objectStore.add(formData);
-
-            request.onsuccess = function (event) {
-                console.log('Form data added to IndexedDB.');
-            };
-
-            request.onerror = function (event) {
-                console.error('Error adding form data to IndexedDB.');
-            };
+            });
         };
 
         reader.onerror = function (event) {
-            console.error('Error reading image file:', event.target.error);
+            displayError('Error reading image file:'+ event.target.error);
         };
 
         reader.readAsArrayBuffer(image);
+    } catch (error) {
+        displayError('Error storing form data');
+    }
+};
 
-    }).catch(error => {
-        console.error('Error opening database:', error);
-    });
-}
+// Open database and perform operations on IDBObjectStore
+// https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore
+const addFormData = async (formData) => {
+    try {
+        const db = await openDatabase();
+        const transaction = db.transaction(['form_data'], 'readwrite');
+        const objectStore = transaction.objectStore('form_data');
+
+        const request = objectStore.add(formData);
+        request.onsuccess = function (event) {
+            alert('Form data added to IndexedDB.');
+        };
+        request.onerror = function (event) {
+            displayError('Error adding form data to IndexedDB:'+ request.error);
+        };
+
+        // Commit the transaction after adding the form data
+        await request.transaction.complete;
+    } catch (error) {
+        displayError('Error adding form data to IndexedDB:'+ error);
+    }
+};
 
 const validateAndSaveFormValues = () => {
     var countrySelect = document.getElementById('countrySelect');
     var stateSelect = document.getElementById('stateSelect');
     var pollutionType = document.getElementById('pollutionType');
-    var phone = document.getElementById('phone').value;
+    var fullName = document.getElementById('fullName').value;
     var image = document.getElementById('image').files[0];
     var additionalInfo = document.getElementById('additionalInfo').value;
 
-    if (countrySelect.value === "" || pollutionType.value === "" || !isValidImage(document.getElementById('image'))) {
-        alert("Please fill in all required fields.");
+    if (countrySelect.value === "" || pollutionType.value === "" ) {
+        displayError("Please fill in all required fields.");
         return false;
     }
 
@@ -124,10 +134,10 @@ const validateAndSaveFormValues = () => {
     document.getElementById('submitButton').disabled = true;
     document.getElementById('loader').style.display = 'inline';
 
-    setTimeout(function() {
-         storeFormData(countrySelect.value, stateSelect.value, pollutionType.value, phone, image, additionalInfo);
+    setTimeout(function () {
+        storeFormData(countrySelect.value, stateSelect.value, pollutionType.value, fullName, image, additionalInfo);
 
-         // Hide loader
+        // Hide loader
         document.getElementById('submitButton').disabled = false;
         document.getElementById('loader').style.display = 'none';
     }, 1500);
@@ -138,3 +148,5 @@ const validateAndSaveFormValues = () => {
 document.getElementById('submitButton').addEventListener('click', () => {
     validateAndSaveFormValues();
 });
+
+
