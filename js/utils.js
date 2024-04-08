@@ -204,3 +204,13 @@ export const formatDateTime = (dateString) => {
   return `${day}-${month}-${year} ${hours12}:${minutes}${ampm}`;
 
 }
+
+export const fetchStateData = async () => {
+  const response = await fetch('./js/master_record/state.json');
+  return await response.json();
+}
+
+export const fetchCountryData = async () => {
+  const response = await fetch('./js/master_record/country.json');
+  return await response.json();
+}

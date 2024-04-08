@@ -72,22 +72,22 @@
             </div>
         </div>
         <!-- Ending Error Display Container -->
-        <a href="/pollution-report-form.html"
-            class="no-text-decoration table_top row justify-content-between align-items-center">
+        <div
+            class="table_top row justify-content-between align-items-center">
             <h1>Pollution Report</h1>
-            <button class="btn report_btn">Report Pollution</button>
-        </a>
+            <a href="/pollution-report-form.html" class="no-text-decoration"><button class="btn report_btn">Report Pollution</button></a>
+         </div>
 
         <div class="mb-1">
-            <form class="card" action="" method="get">
+            <form class="card" id="filterForm" method="get">
                 <div class="row" style="font-size: medium; font-weight: 300;">
                     <div class="col" style="width: 30%;">
                         <div class="label" for="search">Full Name</div>
-                        <input type="text" id="search" placeholder="Search full name">
+                        <input type="text" id="nameFilter" placeholder="Search full name">
                     </div>
                     <div class="col" style="width: 10%;">
                         <div class="label" for="search">Pollution type</div>
-                        <select name="search" id="search" type="options">
+                        <select name="search" id="pollutionTypeFilter" type="options">
                             <option value="Air">Air</option>
                             <option value="Land">Land</option>
                             <option value="Water">Water</option>

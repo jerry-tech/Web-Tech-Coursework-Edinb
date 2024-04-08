@@ -45,10 +45,10 @@ personalizationForm.addEventListener("submit", (e) => {
     //Getting value from form field
     let personalizationName = document.getElementById("personal_name").value;
     if (personalizationName != "" && personalizationName != null) {
-        setCookie(USERNAME_COOKIE_KEY, personalizationName, 365);
+      setCookie(USERNAME_COOKIE_KEY, personalizationName, 365);
+      closeModal();
     }
 });
-
 
 
 /**

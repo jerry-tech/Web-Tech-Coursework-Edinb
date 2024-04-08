@@ -29,6 +29,7 @@ function hideDiv() {
   // Correctly use getElementById without the '#' prefix
   var hidden = document.getElementById("toBeHidden");
 
+  if(hidden != undefined){
   // Function to check the window width and hide/show the div
   function checkWindowSize() {
     if (window.innerWidth < 900) {
@@ -45,6 +46,7 @@ function hideDiv() {
 
   // Check the window size immediately in case it's already less than 900px
   checkWindowSize();
+  }
 }
 
 hideDiv();

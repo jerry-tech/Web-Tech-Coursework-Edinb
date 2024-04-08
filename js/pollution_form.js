@@ -1,28 +1,27 @@
-import { toTitleCase, openDatabase, displayError } from './utils.js';
+import { toTitleCase, openDatabase, displayError, fetchStateData, fetchCountryData } from './utils.js';
 import { MAX_FILE_UPLOAD } from './constant.js';
 
 
 //Load Countries.json
 document.addEventListener("DOMContentLoaded", function () {
-    fetch('./js/master_record/country.json')
-        .then(response => response.json())
+    fetchCountryData()
         .then(data => populateCountry(data))
         .catch(error => console.error('Error fetching countries:', error));
 });
 
-const fetchStateData = (alpha3) => {
-    return new Promise((resolve, reject) => {
-        fetch('./js/master_record/state.json')
-            .then(response => response.json())
-            .then(data => {
-                const filteredStates = data.filter(state => state.alpha3 === alpha3);
-                resolve(filteredStates);
-            })
-            .catch(error => reject(error));
+const fetchState = (alpha3) => {
+    return new Promise((resolve, reject) => { 
+        fetchStateData()
+        .then(data => {
+            const filteredStates = data.filter(state => state.alpha3 === alpha3);
+            resolve(filteredStates);
+        })
+        .catch(error => reject(error));
     });
 }
 
 const populateCountry = (countries) => {
+    console.log(countries);
     const countrySelect = document.getElementById('countrySelect');
 
     countries.forEach(country => {
@@ -36,7 +35,7 @@ const populateCountry = (countries) => {
 
 const populateStates = (alpha3) => {
     var stateSelect = document.getElementById('stateSelect');
-    fetchStateData(alpha3)
+    fetchState(alpha3)
         .then(stateData => {
             stateSelect.innerHTML = '<option value="">Select State</option>';
             stateData.forEach(state => {
@@ -140,6 +139,8 @@ const validateAndSaveFormValues = () => {
         // Hide loader
         document.getElementById('submitButton').disabled = false;
         document.getElementById('loader').style.display = 'none';
+
+        window.location.href="/pollution_report.html";
     }, 1500);
 
 }
