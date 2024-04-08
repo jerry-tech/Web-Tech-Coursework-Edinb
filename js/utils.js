@@ -112,8 +112,9 @@ export const getUserLocation = () => {
 }
 
 //Convert Celcius to Fahrenheit
-export const celsiusToFahrenheit = (celsius) =>{
-  return (celsius * 9/5) + 32;
+export const celsiusToFahrenheit = (celsius) => {
+  const fahrenheit = (celsius * 9/5) + 32;
+  return parseFloat(fahrenheit.toFixed(2));
 }
 
 //Titlecase

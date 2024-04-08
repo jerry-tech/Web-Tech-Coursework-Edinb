@@ -21,7 +21,6 @@ const fetchState = (alpha3) => {
 }
 
 const populateCountry = (countries) => {
-    console.log(countries);
     const countrySelect = document.getElementById('countrySelect');
 
     countries.forEach(country => {
@@ -45,7 +44,7 @@ const populateStates = (alpha3) => {
                 stateSelect.appendChild(option);
             });
         })
-        .catch(error => console.error('Error fetching states:', error));
+        .catch(error => console.error('Error fetching states.'));
 }
 
 // Attach onchange event listener to the country select element
@@ -68,29 +67,37 @@ document.getElementById('image').addEventListener('change', function (event) {
 
 const storeFormData = async (countryAlpha3, stateCode, pollutionType, fullName, image, description) => {
     try {
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            const imageData = event.target.result;
+        const imageData = await readFileAsArrayBuffer(image);
 
-            addFormData({
-                countryAlpha3: countryAlpha3,
-                stateCode: stateCode,
-                pollutionType: pollutionType,
-                fullName: fullName,
-                description: description,
-                createdAt: new Date(),
-                image: imageData
-            });
-        };
+        await addFormData({
+            countryAlpha3: countryAlpha3,
+            stateCode: stateCode,
+            pollutionType: pollutionType,
+            fullName: fullName,
+            description: description,
+            createdAt: new Date(),
+            image: imageData
+        });
 
-        reader.onerror = function (event) {
-            displayError('Error reading image file:'+ event.target.error);
-        };
-
-        reader.readAsArrayBuffer(image);
+        // Redirect only after all form data is added
+        window.location.href = "/pollution_report.html";
     } catch (error) {
+        console.error('Error storing form data:', error);
         displayError('Error storing form data');
     }
+};
+
+const readFileAsArrayBuffer = (file) => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            resolve(event.target.result);
+        };
+        reader.onerror = (event) => {
+            reject(event.target.error);
+        };
+        reader.readAsArrayBuffer(file);
+    });
 };
 
 // Open database and perform operations on IDBObjectStore
@@ -98,23 +105,25 @@ const storeFormData = async (countryAlpha3, stateCode, pollutionType, fullName, 
 const addFormData = async (formData) => {
     try {
         const db = await openDatabase();
-        const transaction = db.transaction(['form_data'], 'readwrite');
+        const transaction = db.transaction('form_data', 'readwrite');
         const objectStore = transaction.objectStore('form_data');
 
         const request = objectStore.add(formData);
         request.onsuccess = function (event) {
-            alert('Form data added to IndexedDB.');
+            console.log('Form data added to IndexedDB.');
         };
         request.onerror = function (event) {
-            displayError('Error adding form data to IndexedDB:'+ request.error);
+            console.error('Error adding form data to IndexedDB:', event.target.error);
         };
 
         // Commit the transaction after adding the form data
-        await request.transaction.complete;
+        await transaction.complete;
     } catch (error) {
-        displayError('Error adding form data to IndexedDB:'+ error);
+        console.error('Error adding form data to IndexedDB:', error);
+        throw error;
     }
 };
+
 
 const validateAndSaveFormValues = () => {
     var countrySelect = document.getElementById('countrySelect');
@@ -140,7 +149,6 @@ const validateAndSaveFormValues = () => {
         document.getElementById('submitButton').disabled = false;
         document.getElementById('loader').style.display = 'none';
 
-        window.location.href="/pollution_report.html";
     }, 1500);
 
 }

@@ -3,59 +3,79 @@ import { retrieveFormDataFromDB, displayError, formatDateTime, fetchStateData, f
 let stateData = null;
 let countryData = null;
 
-fetchStateData()
-    .then(data => {
-        stateData = data;
-    })
-    .catch(error => console.error('Error fetching state data:', error));
+async function fetchData() {
+    try {
+        countryData = await fetchCountryData();
+        stateData = await fetchStateData();
+        
+        // After data is fetched, populate the table
+        loadInitTable();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
 
+fetchData();
 
-fetchCountryData()
-.then(data => {
-    countryData = data;
-})
-.catch(error => console.error('Error fetching country data:', error));
+const getStateName = (alpha3, code) => {
+    if (!stateData) throw new Error('State data not available');
+    
+    const state = stateData.find(state => state.alpha3 === alpha3 && state.code === code);
+    
+    if (state) {
+        return toTitleCase(state.name);
+    } else {
+        throw new Error('State not found');
+    }
+}
 
+const getCountryName = (alpha3) => {
+    if (!countryData) throw new Error('Country data not available');
+    
+    const country = countryData.find(country => country.alpha3 === alpha3);
+    
+    if (country) {
+        return toTitleCase(country.name);
+    } else {
+        throw new Error('Country not found');
+    }
+}
 
 // Populate the table with data from IndexedDB
 const loadInitTable = () => {
     retrieveFormDataFromDB().then(formDataArray => {
-        document.getElementById('table_record_total').innerHTML = 'Total:' + formDataArray.length;
         populateTable(formDataArray);
     }).catch(error => {
         displayError('Error retrieving form data:' + error);
     });
 }
 
-// Call the populateTable function to populate the table when the page loads
-document.addEventListener('DOMContentLoaded', function () {
-    loadInitTable();
-});
-
-
+// Function to populate the table
 const populateTable = (formDataArray) => {
     const dataTable = document.getElementById('dataTable');
     const tbody = dataTable.querySelector('tbody');
     const noDataRow = document.getElementById('noDataRow');
 
-       // Clear existing rows
-       tbody.innerHTML = '';
+    // Clear existing rows
+    tbody.innerHTML = '';
 
     if (formDataArray.length === 0) {
         // If no data is retrieved, display a message
         noDataRow.style.display = 'block';
     } else {
+        document.getElementById('table_record_total').innerHTML = 'Total:' + formDataArray.length;
+        
         noDataRow.style.display = 'none';
         // Populate table rows with form data
         formDataArray.forEach((formData, index) => {
             const tr = document.createElement('tr');
             tr.innerHTML = `
-                <td data-label="${index + 1}">${index + 1}</td>
-                <td data-label="${formData.fullName}">${formData.fullName}</td>
-                <td data-label="${getCountryName(formData.countryAlpha3)}">${getCountryName(formData.countryAlpha3)}</td>
-                <td data-label="${getStateName(formData.countryAlpha3, formData.stateCode)}">${getStateName(formData.countryAlpha3, formData.stateCode)}</td>
-                <td data-label="${formData.pollutionType + ' Pollution'}">${formData.pollutionType + ' Pollution'}</td>
-                <td data-label="${formatDateTime(formData.createdAt)}">${formatDateTime(formData.createdAt)}</td>
+                <td data-label="S/N">${index + 1}</td>
+                <td data-label="Full Name">${formData.fullName}</td>
+                <td data-label="Country">${getCountryName(formData.countryAlpha3)}</td>
+                <td data-label="State">${getStateName(formData.countryAlpha3, formData.stateCode)}</td>
+                <td data-label="Pollution Type">${formData.pollutionType + ' Pollution'}</td>
+                <td data-label="Created At">${formatDateTime(formData.createdAt)}</td>
                 <td><button type="button" class="btn-dark">View</button></td>
             `;
             tbody.appendChild(tr);
@@ -63,7 +83,7 @@ const populateTable = (formDataArray) => {
     }
 }
 
-
+// Event listener for filter form submission
 document.getElementById('filterForm').addEventListener('submit', function (event) {
     event.preventDefault();
 
@@ -76,7 +96,6 @@ document.getElementById('filterForm').addEventListener('submit', function (event
 
         // Filter records based on criteria
         const filteredRecords = formDataArray.filter(record => {
-         console.log(record)
             return (!nameFilterValue || record.fullName.toLowerCase().includes(nameFilterValue)) &&
                 (!pollutionTypeFilterValue || record.pollutionType.toLowerCase().includes(pollutionTypeFilterValue));
         });
@@ -87,22 +106,3 @@ document.getElementById('filterForm').addEventListener('submit', function (event
         displayError('Error retrieving form data:' + error);
     });
 });
-
-const getStateName = (alpha3, code) => {
-    const state = stateData.find(state => state.alpha3 === alpha3 && state.code === code);   
-    console.log(state)      
-    if (state) {
-        return toTitleCase(state.name);
-    } else {
-        throw new Error('State not found');
-    }
-}
-
-const getCountryName = (alpha3) => {
-    const country = countryData.find(country => country.alpha3 === alpha3);         
-    if (country) {
-        return toTitleCase(country.name);
-    } else {
-        throw new Error('Country not found');
-    }
-}
