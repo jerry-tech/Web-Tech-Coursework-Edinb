@@ -1,0 +1,138 @@
+.skater {
+    position: absolute !important;
+    bottom: 0;
+    width: 40%;
+    right: 0;
+    z-index: -1;
+    opacity: .5;
+}
+
+p {
+    line-height: 2;
+}
+
+.text_width_reduce {
+    width: 80%;
+}
+
+@media screen and (width < 500px) {
+    .text_width_reduce {
+        width: 100%;
+    }
+}
+
+/* Grid system  */
+
+.row {
+    display: flex;
+    gap: 2rem;
+}
+
+@media screen and (width < 900px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .col {
+        flex: 0 0 auto !important;
+    }
+
+    .grid {
+        display: inherit !important;
+    }
+
+    .g_five {
+        display: block;
+    }
+}
+
+.col {
+    flex: 1;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.apply_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (width < 1200px) {
+    .grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .g_three {
+        order: 3;
+    }
+}
+
+@media screen and (width < 768px) {
+
+    .apply_flex {
+        display: none;
+    }
+
+    .col {
+        flex: auto;
+    }
+
+    .grid_container {
+        grid-template-columns: 8fr !important;
+        justify-items: center;
+    }
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    /* background-color: #2196F3; */
+    padding: 10px;
+
+}
+
+.grid_item {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+padding: 20px;
+}
+
+.grid_item img {
+    width: clamp(100%, 100vw, 100px);
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* //________________ */
+.news_heading {
+    margin-top: 5rem;
+}
+
+.news_heading .row .col:nth-child(2) {
+    text-align: center;
+}
+
+.news_heading .row .col:nth-child(2) img {
+    width: clamp(100px, 80vw, 400px);
+    height: clamp(100px, 40vh, 400px);
+}
+
+.news_body {
+    margin-top: 5rem;
+}
