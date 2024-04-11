@@ -87,3 +87,169 @@
     margin-right: .2rem;
     background-color: var(--danger);
 }
+
+/*https://cloudinary.com/blog/working_with_css_images*/
+.modal-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    border-radius: 10px;
+    margin: 10% auto;
+    padding: 40px 30px;
+    width: 80%;
+    max-width: 500px;
+}
+
+.close {
+    position: relative;
+    top: -30px;
+    right: -18px;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .modal-content {
+        margin: 20% auto;
+    }
+
+    .apply_flex {
+        display: none;
+    }
+}
+
+/* Styling for form and buttons */
+button:hover {
+    opacity: 0.8;
+}
+
+.block,
+.allow {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.allow {
+    background-color: #4CAF50;
+}
+
+.block:hover,
+.allow:hover {
+    opacity: 0.8;
+}
+
+/* Grid system  */
+
+.col {
+    flex: 1;
+}
+
+.apply_flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (width < 768px) {
+
+    .apply_flex {
+        display: none;
+    }
+}
+
+.hide {
+    display: none !important;
+}
+
+.modal-heading {
+    transform: translateY(-80%);
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px dashed #ddd;
+}
+
+tr td:nth-child(2) {
+    font-size: .8rem;
+    color: #7d7b7b;
+}
+
+.square-background {
+    width: clamp(50px,
+            30vw,
+            150px);
+    height: clamp(50px,
+            30vw,
+            150px);
+    background: var(--dark_25);
+    border-radius: 5px;
+}
+
+.rect-background {
+    width: clamp(100%,
+            30vw,
+            150px);
+    height: max-content;
+    background: var(--dark_25);
+    border-radius: 5px;
+}
+
+.flex-control {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+@media screen and (width < 600px) {
+    .flex-control {
+        flex-direction: row;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+}
+
+.btn-danger {
+    background-color: #f44336;
+}

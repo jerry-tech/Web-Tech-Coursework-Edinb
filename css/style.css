@@ -862,3 +862,29 @@ figure {
 .w-100 {
     width: 100%;
 }
+
+.alert {
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+}
+.alert-success {
+    color: rgb(27, 112, 27);
+    background-color: rgb(200, 231, 200);
+    border-color: rgb(200, 231, 200);
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-danger .fas {
+    color: #721c24;
+}
+
+.no-text-decoration{
+    text-decoration: none;
+}

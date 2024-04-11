@@ -1,4 +1,4 @@
-import { toTitleCase, openDatabase, displayError, fetchStateData, fetchCountryData } from './utils.js';
+import { toTitleCase, openDatabase, displayMessage, fetchStateData, fetchCountryData } from './utils.js';
 import { MAX_FILE_UPLOAD } from './constant.js';
 
 
@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const fetchState = (alpha3) => {
-    return new Promise((resolve, reject) => { 
+    return new Promise((resolve, reject) => {
         fetchStateData()
-        .then(data => {
-            const filteredStates = data.filter(state => state.alpha3 === alpha3);
-            resolve(filteredStates);
-        })
-        .catch(error => reject(error));
+            .then(data => {
+                const filteredStates = data.filter(state => state.alpha3 === alpha3);
+                resolve(filteredStates);
+            })
+            .catch(error => reject(error));
     });
 }
 
@@ -59,7 +59,7 @@ document.getElementById('image').addEventListener('change', function (event) {
     const maxSizeInBytes = MAX_FILE_UPLOAD;
 
     if (file && file.size > maxSizeInBytes) {
-        displayError('Image size exceeds the maximum allowed size of 500 KB.');
+        displayMessage('Image size exceeds the maximum allowed size of 500 KB.', 'error');
         event.target.value = '';
     }
 });
@@ -78,12 +78,9 @@ const storeFormData = async (countryAlpha3, stateCode, pollutionType, fullName, 
             createdAt: new Date(),
             image: imageData
         });
-
-        // Redirect only after all form data is added
-        window.location.href = "/pollution_report.html";
     } catch (error) {
         console.error('Error storing form data:', error);
-        displayError('Error storing form data');
+        displayMessage('Error storing form data', 'error');
     }
 };
 
@@ -109,8 +106,13 @@ const addFormData = async (formData) => {
         const objectStore = transaction.objectStore('form_data');
 
         const request = objectStore.add(formData);
+
         request.onsuccess = function (event) {
-            console.log('Form data added to IndexedDB.');
+            // Redirect only after all form data is added
+            displayMessage('Pollution Report has been saved successfully.', 'success');
+            setInterval(() => {
+                window.location.href = "/pollution_report.html";
+            }, 1500);
         };
         request.onerror = function (event) {
             console.error('Error adding form data to IndexedDB:', event.target.error);
@@ -133,8 +135,8 @@ const validateAndSaveFormValues = () => {
     var image = document.getElementById('image').files[0];
     var additionalInfo = document.getElementById('additionalInfo').value;
 
-    if (countrySelect.value === "" || pollutionType.value === "" ) {
-        displayError("Please fill in all required fields.");
+    if (countrySelect.value === "" || pollutionType.value === "") {
+        displayMessage("Please fill in all required fields.", 'error');
         return false;
     }
 

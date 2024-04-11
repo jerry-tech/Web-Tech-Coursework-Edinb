@@ -11,7 +11,7 @@
 
     <title>Polluguard</title>
 </head>
-
+ 
 <body class="pr">
     <aside>
         <div id="sideNav" class="sidenav">
@@ -24,7 +24,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
 
-            <a href="/pollution_index.html">Pollution Index</a>
+            <a href="/pollution_index.html">Pollution Index</a> 
             <a href="/pollution-report-form.html">Reporting</a>
             <a href="/pollution_report.html">About</a>
             <a href="#">Credits</a>
@@ -64,15 +64,14 @@
     </main>
 
     <div class="container_variable_2">
-        <!-- Error Display Container -->
-        <div id="errorContainer" class="alert alert-danger mt-1 p-2" style="display: none;">
+         <!-- Display Message Container -->
+         <div id="messageContainer" class="alert alert-success mt-1 p-2" style="display: none;">
             <div style="display: flex; align-items: center; justify-content: center;">
-                <i class="fa fa-info-circle me-2" style="font-size: 25px;"></i>
-
-                <span style="margin-left: 10px;" id="errorMessage"></span>
+                <i id="messageIcon" style="font-size: 25px;"></i>
+                <span style="margin-left: 10px;" id="message"></span>
             </div>
-        </div>       
-          <!-- Ending Error Display Container --> 
+        </div>
+        <!-- Ending Display Message Container -->
         <div class="table_top mb-2">
             <h2>See it, Smell it, Report it.</h2>
             <br>

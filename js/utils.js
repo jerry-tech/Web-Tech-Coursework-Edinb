@@ -1,4 +1,4 @@
-import { CURRENT_LOCATION_TIMEOUT, GEOLOCATION_KEY } from './constant.js';
+import { CURRENT_LOCATION_TIMEOUT, GEOLOCATION_KEY, DATABASE_NAME } from './constant.js';
 
 const currentDate = new Date();
 
@@ -127,7 +127,7 @@ export const toTitleCase = (str) => {
 // Function to open the IndexedDB database
 export const openDatabase = () => {
   return new Promise((resolve, reject) => {
-      var request = window.indexedDB.open('PolluguardDB', 1);
+      var request = window.indexedDB.open(DATABASE_NAME, 1);
 
       request.onupgradeneeded = function(event) {
           var db = event.target.result;
@@ -141,11 +141,11 @@ export const openDatabase = () => {
           objectStore.createIndex('image', 'image', { unique: false });
       };
 
-      request.onsuccess = function(event) {
+      request.onsuccess = (event) => {
           resolve(event.target.result);
       };
 
-      request.onerror = function(event) {
+      request.onerror = (event) => {
           reject(event.target.error);
       };
   });
@@ -159,12 +159,12 @@ export const retrieveFormDataFromDB = () => {
           const objectStore = transaction.objectStore('form_data');
           const getRequest = objectStore.getAll();
 
-          getRequest.onsuccess = function(event) {
+          getRequest.onsuccess = (event) => {
               const formDataArray = event.target.result;
               resolve(formDataArray);
           };
 
-          getRequest.onerror = function(event) {
+          getRequest.onerror = (event) => {
               reject(new Error('Error retrieving form data from IndexedDB.'));
           };
       }).catch(error => {
@@ -173,14 +173,47 @@ export const retrieveFormDataFromDB = () => {
   });
 }
 
-//Displaying of error messages as an alert
-export const displayError = (errorMessage) => {
-  const errorContainer = document.getElementById('errorContainer');
-  const errorMessageSpan = document.getElementById('errorMessage');
-  errorMessageSpan.textContent = errorMessage;
-  errorContainer.style.display = 'block';
-  setTimeout(()=>{
-    errorContainer.style.display = 'none';
+// Function to delete form data from IndexedDB
+// https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/delete
+export const deleteFormDataFromDB = (id) => {
+  return new Promise((resolve, reject) => {
+      openDatabase().then(db => {
+          const transaction = db.transaction(['form_data'], 'readwrite');
+          const objectStore = transaction.objectStore('form_data');
+          const deleteRequest = objectStore.delete(id);
+
+          deleteRequest.onsuccess = (event) => {
+            resolve();
+        };
+
+        deleteRequest.onerror = (event) => {
+            reject('Error deleting form data from database');
+        };
+      }).catch(error => {
+          reject(error);
+      });
+  });
+}
+
+//Displaying of messages as an alert error / success
+export const displayMessage = (message, type) => {
+  const messageContainer = document.getElementById('messageContainer');
+  const messageSpan = document.getElementById('message');
+  const messageIcon = document.getElementById('messageIcon');
+
+  messageSpan.textContent = message;
+
+  if (type === 'success') {
+      messageContainer.className = 'alert alert-success mt-1 p-2';
+      messageIcon.className = 'fa fa-check-circle me-2';
+  } else if (type === 'error') {
+      messageContainer.className = 'alert alert-danger mt-1 p-2';
+      messageIcon.className = 'fa fa-info-circle me-2';
+  }
+
+  messageContainer.style.display = 'block';
+  setTimeout(() => {
+      messageContainer.style.display = 'none';
   }, 2500);
 }
 
@@ -214,4 +247,9 @@ export const fetchStateData = async () => {
 export const fetchCountryData = async () => {
   const response = await fetch('./js/master_record/country.json');
   return await response.json();
+}
+
+export const getImageUrl = (imageData) => {
+  const blob = new Blob([imageData], { type: 'image/jpeg' });
+  return URL.createObjectURL(blob);
 }
