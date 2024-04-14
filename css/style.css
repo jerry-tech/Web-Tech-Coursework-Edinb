@@ -6,7 +6,7 @@ body {
 }
 
 body:not(.db, .pr) {
-    background: url(/img/design.svg) no-repeat top left;
+    background: url(../img/design.svg) no-repeat top left;
     background-size: clamp(5rem, 50vw, 30rem);
     padding-right: 3rem;
 
@@ -333,7 +333,7 @@ main {
 
 
 .location:before {
-    content: url(/img/location.svg);
+    content: url(../img/location.svg);
     width: 70%;
 }
 
@@ -381,21 +381,21 @@ textarea {
 }
 
 .col-one:before {
-    content: url(/img/bi_snow.svg);
+    content: url(../img/bi_snow.svg);
     position: relative;
     left: -15%;
     top: 3.5px;
 }
 
 .col-two:before {
-    content: url(/img/ph_wind.svg);
+    content: url(../img/ph_wind.svg);
     position: relative;
     left: -15%;
     top: 3.5px;
 }
 
 .col-three:before {
-    content: url(/img/ph_sun.svg);
+    content: url(../img/ph_sun.svg);
     position: relative;
     left: -15%;
     top: 3.5px;
