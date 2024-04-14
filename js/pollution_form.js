@@ -107,11 +107,11 @@ const addFormData = async (formData) => {
 
         const request = objectStore.add(formData);
 
-        request.onsuccess = function (event) {
+        request.onsuccess = (event) => {
             // Redirect only after all form data is added
             displayMessage('Pollution Report has been saved successfully.', 'success');
             setInterval(() => {
-                window.location.href = "/pollution_report.html";
+                window.location.href = "./pollution_report.html";
             }, 1500);
         };
         request.onerror = function (event) {
