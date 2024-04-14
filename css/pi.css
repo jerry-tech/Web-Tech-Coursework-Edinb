@@ -145,7 +145,7 @@ body {
 }
 
 .top-section {
-    background: url('/img/pi_img/pi_back.png') no-repeat;
+    background: url('../img/pi_img/pi_back.png') no-repeat;
     background-size: cover;
     overflow: auto;
 }
