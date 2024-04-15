@@ -110,11 +110,11 @@ const addFormData = async (formData) => {
         request.onsuccess = (event) => {
             // Redirect only after all form data is added
             displayMessage('Pollution Report has been saved successfully.', 'success');
-            setInterval(() => {
+            setTimeout(() => {
                 window.location.href = "../pollution_report.html";
             }, 1500);
         };
-        request.onerror = function (event) {
+        request.onerror = (event) => {
             console.error('Error adding form data to IndexedDB:', event.target.error);
         };
 
@@ -144,7 +144,7 @@ const validateAndSaveFormValues = () => {
     document.getElementById('submitButton').disabled = true;
     document.getElementById('loader').style.display = 'inline';
 
-    setTimeout(function () {
+    setTimeout( () => {
         storeFormData(countrySelect.value, stateSelect.value, pollutionType.value, fullName, image, additionalInfo);
 
         // Hide loader

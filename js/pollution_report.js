@@ -196,7 +196,7 @@ const createModal = (formData, stateName, countryName, currentTime) => {
             document.body.removeChild(modal);
 
             displayMessage('Record Deleted Successfully', 'success');
-            setInterval(() => {
+            setTimeout(() => {
                 loadInitTable();
             }, 1500)
         } catch (error) {
