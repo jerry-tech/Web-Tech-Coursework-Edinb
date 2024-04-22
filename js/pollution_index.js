@@ -30,17 +30,13 @@ const callCurrentWeatherAPI = () => {
         });
 }
 
-// callCurrentWeatherAPI();
+callCurrentWeatherAPI();
 const updateWeatherUI = (weatherData) => {
     document.getElementById('temInFahrenheit').textContent = `${celsiusToFahrenheit(weatherData.current.temperature2m)}${'°F'}`;
     document.getElementById('temperatureInfo').textContent = `Feels like ${weatherData.current.temperature2m}${weatherData.currentUnits.temperature2m}`;
     document.getElementById('temperatureInfoHigh').textContent = `High: ${weatherData.daily.temperature2mMax}${weatherData.dailyUnits.temperature2mMax}`;
     document.getElementById('temperatureInfoLow').textContent = `Low: ${weatherData.daily.temperature2mMin}${weatherData.dailyUnits.temperature2mMin}`;
 }
-
-
-
-
 
 
 
@@ -66,8 +62,8 @@ const callPollutionHistoryAPI = () => {
             console.error('Error fetching data:', error);
         });
 }
-//
-// callPollutionHistoryAPI();
+
+callPollutionHistoryAPI();
 const updatePollutionWeatherUI = (pollutionData) => {
     document.getElementById('pm10').textContent = `${pollutionData.current.pm10}${pollutionData.currentUnits.pm10}`;
     document.getElementById('pm2_5').textContent = `${pollutionData.current.pm25}${pollutionData.currentUnits.pm25}`;

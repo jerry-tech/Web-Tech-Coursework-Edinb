@@ -253,3 +253,10 @@ export const getImageUrl = (imageData) => {
   const blob = new Blob([imageData], { type: 'image/jpeg' });
   return URL.createObjectURL(blob);
 }
+
+export const navigateByUrl = (urlPath) => {
+  var a = document.createElement('a');
+  a.href = urlPath;
+  document.body.appendChild(a);
+  a.click();
+}

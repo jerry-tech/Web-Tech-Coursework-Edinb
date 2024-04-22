@@ -1,4 +1,4 @@
-import { toTitleCase, openDatabase, displayMessage, fetchStateData, fetchCountryData } from './utils.js';
+import { toTitleCase, openDatabase, displayMessage, fetchStateData, fetchCountryData, navigateByUrl } from './utils.js';
 import { MAX_FILE_UPLOAD } from './constant.js';
 
 //Load Countries.json
@@ -110,7 +110,7 @@ const addFormData = async (formData) => {
             // Redirect only after all form data is added
             displayMessage('Pollution Report has been saved successfully.', 'success');
             setTimeout(() => {
-                window.location.href = "../pollution_report.html";
+                navigateByUrl('./pollution_report.html');
             }, 1500);
         };
         request.onerror = (event) => {
