@@ -12,9 +12,7 @@
 </head>
 
 <body>
-
     <!-- Start of Personalization Modal Page -->
-
     <div id="myModal" class="modal hide"> 
         <div class="modal-content">
             <span class="close_modal" onclick="closeModal()">&times;</span>
@@ -76,7 +74,7 @@
                         <li><a href="./pollution-report-form.html">Report Pollution</a></li>
                         <li><a href="./about-us.html">About</a></li>
                         <li>
-                            <a href="#">Credits</a>
+                            <a href="./credits.html">Credits</a>
                         </li>
 
                     </ul>
@@ -95,9 +93,9 @@
                 <div class="greetings">
                     <h2 id="greetings">Good Morning</h2>
                 </div>
+                <br>
                 <small class="info">
-                    Pollution is bad for our ecosystem
-                    Be informed, take action!
+                    Pollution is bad for our ecosystem be informed, take action!
                 </small>
             </div>
 
@@ -117,19 +115,16 @@
                             18
                         </div>
 
-                        <div class="location">
-                            <form>
-                                <div class="row">
-                                    <div class="">
-                                        <select style=" border: none;  width: 150px;" id="country" name="country">
-                                            <option value="australia">Australia</option>
-                                            <option value="canada">Canada</option>
-                                            <option value="usa">USA</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                            </form>
+                        <div class="quote-container">
+                            <div class="row">
+                                <div class="quote">
+                                    <blockquote>
+                                      <p>Let's take care of the earth and she <br>will take care of us.</p>
+                                      <cite>1972 World Environment DAY</cite>
+                                    </blockquote>
+                                  </div>
+                                   
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,35 +152,35 @@
                         <span style="text-wrap: nowrap;">about Pollution</span>
                     </div>
 
-                    <div>
+                    <div class="col-md-3">
                         <figure>
-                            <img src="./img/news-1.png" alt="">
+                            <img class="news-image" src="./img/news-1.png" alt="">
                             <figcaption>
                                 <small>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Niger Delta oil spills bring poverty, low crop yields to farmers.
                                 </small>
                             </figcaption>
                         </figure>
 
                     </div>
 
-                    <div>
+                    <div class="col-md-3">
                         <figure>
-                            <img src="./img/news-2.png" alt="">
+                            <img class="news-image" src="./img/news-2.png" alt="">
                             <figcaption>
                                 <small>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Niger Delta communities in ‘great danger’ as month-old oil spill continues
                                 </small>
                             </figcaption>
                         </figure>
                     </div>
 
-                    <div>
+                    <div class="col-md-3">
                         <figure>
-                            <img src="./img/news-3.png" alt="">
+                            <img class="news-image" src="./img/news-3.png" alt="">
                             <figcaption>
                                 <small>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    No clean up, no justice: Shell’s oil pollution in the Niger Delta
                                 </small>
                             </figcaption>
                         </figure>
@@ -196,7 +191,35 @@
     </main>
 
     <section class="footer">
-
+            <div class="footer_container">
+                <div class="footer_row">
+                    <div class="footer-col">
+                        <img src="./img/logo.svg" alt="">
+                    </div>
+    
+                    <div class="footer-col">
+                        <h4>Features</h4>
+                        <ul>
+                            <li><a href="./pollution_index.html">Pollution Index</a></li>
+                            <li><a href="./pollution-report-form.html">Pollution Report Form</a></li>
+                            <li><a href="./pollution_report.html">Pollution Report History</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Extras</h4>
+                        <ul>
+                            <li><a href="./about-us.html">About</a></li>
+                            <li><a href="./credits.html">Credits</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Get help</h4>
+                        <ul>
+                            <li><a href="./contact-us.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
     </section>
 
      <!-- Javascript -->

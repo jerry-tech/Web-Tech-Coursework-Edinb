@@ -1,7 +1,6 @@
 import { toTitleCase, openDatabase, displayMessage, fetchStateData, fetchCountryData } from './utils.js';
 import { MAX_FILE_UPLOAD } from './constant.js';
 
-
 //Load Countries.json
 document.addEventListener("DOMContentLoaded", function () {
     fetchCountryData()

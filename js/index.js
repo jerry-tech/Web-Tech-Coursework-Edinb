@@ -14,10 +14,6 @@ const greeting = () => {
     return 'Good Evening';
 }
 
-if (document.getElementById('greetings')) {
-    document.getElementById('greetings').textContent = greeting();
-}
-
 // Update the content of the HTML element with id 'current_time' && 'current_date'
 if(document.getElementById('current_date')){
   document.getElementById('current_date').textContent = getCurrentDate();  
@@ -35,6 +31,13 @@ if (personalizationName === "") {
     var modal = document.querySelector(".modal");
     if (modal.classList.contains("hide")) {
         modal.classList.remove("hide");
+    }
+    if (document.getElementById('greetings')) {
+        document.getElementById('greetings').textContent = greeting();
+    }
+}else{
+    if (document.getElementById('greetings')) {
+        document.getElementById('greetings').textContent = greeting() + ", " +  personalizationName.split(' ')[0];
     }
 }
 

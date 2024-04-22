@@ -15,17 +15,13 @@
 </head>
 
 <body>
-
     <img src="./img/skater.svg" alt="" class="skater">
     <aside>
         <div id="sideNav" class="sidenav">
-
             <div class="top-cover">
                 <div class="logo sec" style="padding: 0 1rem;">
                     <img src="./img/logo.svg" alt="" class="logo-img">
-
                 </div>
-
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
 
@@ -136,10 +132,37 @@
 
 
     </main>
-    <button onclick="document.querySelector('.footer').innerHTML = Date()">Date</button>
     <section class="footer">
+        <div class="footer_container">
+            <div class="footer_row">
+                <div class="footer-col">
+                    <img src="./img/logo.svg" alt="">
+                </div>
 
-    </section>
+                <div class="footer-col">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="./pollution_index.html">Pollution Index</a></li>
+                        <li><a href="./pollution-report-form.html">Pollution Report Form</a></li>
+                        <li><a href="./pollution_report.html">Pollution Report History</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Extras</h4>
+                    <ul>
+                        <li><a href="./about-us.html">About</a></li>
+                        <li><a href="./credits.html">Credits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="./contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</section>
 
     <script src="./js/server.js"></script>
 </body>
