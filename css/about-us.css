@@ -136,3 +136,8 @@ padding: 20px;
 .news_body {
     margin-top: 5rem;
 }
+
+/*Overriding the normal behaviour*/
+.icon {
+    margin-top: 0px !important; 
+   }
