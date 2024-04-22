@@ -1048,7 +1048,7 @@ figure {
 }
 
 .quote blockquote p {
-    font-size: 15px;
+    font-size: 13px;
 }
 
 .quote blockquote cite {
@@ -1074,5 +1074,5 @@ figure {
 
 .quote-container:before {
     content: url(../img/left-quote.svg);
-    width: 70%;
+    width: 50%;
 }
