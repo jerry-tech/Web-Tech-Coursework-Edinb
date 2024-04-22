@@ -170,6 +170,7 @@ main {
     position: relative;
     transform: translate(50%, 100%);
     font-size: 2rem;
+    margin-top: -130px;
     color: var(--text-dark);
 }
 
