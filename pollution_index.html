@@ -20,10 +20,10 @@
                 </div>
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
-            <a href="./pollution_index.html">Pollution Index</a> 
+            <a href="./pollution_index.html">Pollution Index</a>
             <a href="./pollution-report-form.html">Reporting</a>
             <a href="./about-us.html">About</a>
-            <a href="#">Credits</a>
+            <a href="./credits.html">Credits</a>
         </div>
     </aside>
     <div class="top-section">
@@ -35,14 +35,14 @@
 
                     <div class="nav-list" style="width: 100%;">
                         <ul class="nav-list-items" id="topNav">
-                            <li class="logo">
-                                <a href="./index.html"><img src="./img/logo.svg" alt=""></a>
+                            <li class="logo" >
+                                <a><img src="./img/logo.svg" alt=""></a>
                             </li>
-                            <li><a href="./pollution_index.html">Pollution Index</a></li>
+                            <li><a href="./pollution_index.html" class="nav-active">Pollution Index</a></li>
                             <li><a href="./pollution-report-form.html">Report Pollution</a></li>
                             <li><a href="./about-us.html">About</a></li>
                             <li>
-                                <a href="#">Credits</a>
+                                <a href="./credits.html">Credits</a>
                             </li>
                         </ul>
                     </div>
@@ -54,14 +54,18 @@
 
 
             <section class="body">
-                <div class="row .justify-content-around">
-                    <div class="col">
-                        <h4 class="large_text">Location</h4>
-                        <p>Time and Date</p>
+                <div class="row justify-content-around">
+                    <div class="quote-container">
+                        <div class="quote">
+                            <blockquote>
+                                <p>Good stewardship of the environment is not just a personal responsibility, <br> it is a public value.</p>
+                                <cite> US Fmr. President George W. Bush</cite>
+                            </blockquote>
+                        </div>
                     </div>
                     <div class="col justify-self-right">
                         <h4 id="current_time" class="large_text">8:36 AM</h4>
-                        <p>Time and Date</p>
+                        <p>Timestamp</p>
                     </div>
                 </div>
 
@@ -77,7 +81,7 @@
                             infrastructure.
                         </div>
                         <div class="mt-2">
-                            <button class="btn">Read more</button>
+                            <button class="btn" onclick="document.location='./blog.html'">Read more</button>
                         </div>
 
                     </div>
@@ -102,8 +106,8 @@
                 </div>
                 <div class="col ">
                     <div class="large-data-farenheit" id="temInFahrenheit">
-                        0<span>
-                            <super>°F</sub>
+                        <span>
+                            <super>0°F</sub>
                         </span>
                     </div>
                     <div class="center measure" id="temperatureInfo">Feels like 0°C</div>
@@ -121,7 +125,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Particulate Matter(<span>PM<sub>2.5</sub></span>)</span>
                             <p id="pm10" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -129,7 +133,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Particulate Matter(<span>PM<sub>10</sub></span>)</span>
                             <p id="pm2_5" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -137,7 +141,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Carbon Monoxide(CO)</span>
                             <p id="carbon_monoxide" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -145,7 +149,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Nitrogen Dioxide(<span>NO<sub>2</sub></span>)</span>
                             <p id="nitrogen_dioxide" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -160,7 +164,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Sulphur Dioxide(<span>SO<sub>2</sub></span>)</span>
                             <p id="sulphur_dioxide" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -168,7 +172,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Ozone(<span>O<sub>3</sub></span>)</span>
                             <p id="ozone" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -176,7 +180,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Dust</span>
                             <p id="dust" style="font-size: 30px;">0μg/m³</p>
                         </div>
@@ -184,7 +188,7 @@
                     <div class="col">
                         <div
                             style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                            <img src="./img/news-2.png" alt="" class="img-clip">
+                            <img src="./img/ozone.png" alt="" class="img-clip">
                             <span>Ammonia(<span>NH<sub>3</sub></span>)</span>
                             <p id="ammonia" style="font-size: 30px;">0μg/m³</p>
                         </div>

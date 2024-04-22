@@ -454,3 +454,69 @@ figure {
 .w-100 {
     width: 100%;
 }
+
+/*
+  Code adapted from SVGRepo - Left Quote Icon
+  Source: https://www.svgrepo.com
+  Source: https://codepen.io/chris22smith/pen/oQWavL
+*/
+.quote {
+    display: inline-block;
+    overflow: hidden;
+    margin: 1em;
+}
+
+.quote blockquote {
+    background-color: #fff;
+    border: solid 2px #757575;
+    display: inline-block;
+    margin: 0;
+    padding: 1em;
+    position: relative;
+}
+
+.quote blockquote:before {
+    background-color: #fff;
+    bottom: -10%;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: -10%;
+    transform: rotate(-15deg) skew(5deg);
+}
+
+.quote blockquote p {
+    font-size: 13px;
+}
+
+.quote blockquote cite {
+    display: block;
+    font-style: italic;
+    text-align: right;
+}
+
+.quote blockquote cite:before {
+    content: "- ";
+}
+
+.quote blockquote>* {
+    position: relative;
+    z-index: 1;
+}
+
+.quote-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quote-container:before {
+    content: url(../img/left-quote.svg);
+}
+
+.nav-active{
+    background-color: var(--primary-color-25) !important;
+    border-radius: .5rem !important;
+    color: var(--text-primary) !important;
+}

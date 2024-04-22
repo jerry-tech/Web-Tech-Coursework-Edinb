@@ -24,7 +24,9 @@ main {
     font-size: 0.6em;
     opacity: 0.5;
 }
-
+.pointer{
+    cursor: pointer;
+}
 /* container class */
 
 .container {
@@ -112,6 +114,12 @@ main {
     background-color: var(--primary-color-25);
     border-radius: .5rem;
     color: var(--text-primary);
+}
+
+.nav-active{
+    background-color: var(--primary-color-25) !important;
+    border-radius: .5rem !important;
+    color: var(--text-primary) !important;
 }
 
 @media screen and (width< 1200px) {
