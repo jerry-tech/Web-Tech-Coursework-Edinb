@@ -51,12 +51,13 @@ export class CurrentUnits {
 * @param {number} windSpeed10m - The wind speed at 10 meters above ground level.
 */
 export class CurrentData {
-  constructor(time, interval, temperature2m, relativeHumidity2m, windSpeed10m) {
+  constructor(time, interval, temperature2m, relativeHumidity2m, windSpeed10m, isDay) {
       this.time = time;
       this.interval = interval;
       this.temperature2m = temperature2m;
       this.relativeHumidity2m = relativeHumidity2m;
       this.windSpeed10m = windSpeed10m;
+      this.isDay = isDay;
   }
 }
 
@@ -109,7 +110,8 @@ export const parseCurrentWeatherData = (data) => {
     data.current.interval,
     data.current.temperature_2m,
     data.current.relative_humidity_2m,
-    data.current.wind_speed_10m
+    data.current.wind_speed_10m,
+    data.current.is_day
   );
 
   const dailyUnitsData = data.daily_units;

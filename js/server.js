@@ -25,6 +25,13 @@ function closeModal() {
   }
 }
 
+function showModal(){
+  var modal = document.querySelector(".modal");
+  if (modal.classList.contains("hide")) {
+      modal.classList.remove("hide");
+  }
+}
+
 function hideDiv() {
   // Correctly use getElementById without the '#' prefix
   var hidden = document.getElementById("toBeHidden");
@@ -34,10 +41,8 @@ function hideDiv() {
   function checkWindowSize() {
     if (window.innerWidth < 900) {
       hidden.classList.add("hide");
-      console.log("hidden");
     } else {
       hidden.classList.remove("hide");
-      console.log("seen");
     }
   }
 
