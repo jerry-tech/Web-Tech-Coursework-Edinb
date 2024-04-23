@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700&display=swap&subset=cyrillic');
+
+
+.main_wrapper {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    height: calc(100vh - 500px);
+    font-family: 'Caveat';
+    font-size: 44px;
+    font-size: calc(22px + (36 - 22) * ((100vw - 980px) / (1400 - 980)));
+    white-space: nowrap;
+    color: var(--dark, );
+    overflow: hidden;
+    height: 90vh;
+}
+
+.intro {
+    position: relative;
+    padding-bottom: 35%;
+}
+
+.scroller {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: scroll 35s linear infinite
+}
+
+@keyframes scroll {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0);
+    }
+
+    2% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    95% {
+        opacity: 1;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, -100%, 0);
+        opacity: 0;
+    }
+}
+
+/* Sections */
+.scroller_wrapper {
+    position: relative;
+    padding-top: 50%;
+}
+
+.scroller_wrapper_last {
+    position: absolute;
+    right: 0;
+    bottom: -300px;
+    left: 0;
+    transform: translateY(100%);
+}
+
+/* List */
+dl {
+    font-size: .6em;
+    line-height: 1.5;
+}
+
+dl:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+dt,
+dd {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+dt {
+    text-align: right;
+    padding-right: 10px;
+}
+
+dd {
+    margin: 0;
+    padding-left: 10px;
+    text-align: left;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+/* Typography */
+h3,
+p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backface-visibility: hidden;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: .8em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: .8em;
+}
+
+p {
+    font-weight: 400;
+    color: #FED636;
+    color: var(--primary-color, #FED636);
+}
+
+span {
+    text-transform: uppercase;
+    color: var(--dark, );
+}
+
+b {
+    font-weight: 700;
+}

@@ -1,11 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+        content="PolluGuard: Your dedicated environmental watchdog. We empower communities with real-time pollution monitoring and reporting tools, enabling actionable insights into air, water, and soil quality. Join us in safeguarding our planet for future generations.">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/variable.css">
+    <link rel="stylesheet" href="css/credits.css">
+
+    <title>Polluguard</title>
 </head>
+
 <body>
-    
+    <aside>
+        <div id="sideNav" class="sidenav">
+
+            <div class="top-cover">
+                <div class="logo sec" style="padding: 0 1rem;" onclick="document.location='./index.html'">
+                    <img src="img/logo.svg" alt="" class="logo-img">
+                </div>
+
+                <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
+            </div>
+
+            <a href="/pollution_index.html">Pollution Index</a>
+            <a href="./pollution-report-form.html">Reporting</a>
+            <a href="./about-us.html">About</a>
+            <a href="./credits.html">Credits</a>
+        </div>
+    </aside>
+
+    <main class="container"> 
+
+        <section class="header">
+            <div class="mt-4 header-content">
+
+                <div class="nav-list">
+                    <ul class="nav-list-items" id="topNav">
+                        <li class="logo" onclick="document.location='./index.html'">
+                            <img src="img/logo.svg" alt="">
+                        </li>
+                        <li><a href="/pollution_index.html">Pollution Index</a></li>
+                        <li><a href="./pollution-report-form.html">Report Pollution</a></li>
+                        <li><a href="./about-us.html">About</a></li>
+                        <li>
+                            <a href="./credits.html"class="nav-active">Credits</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="openClose()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <section class="main_wrapper">
+        <div class="scroller_wrapper ">
+
+            <div class="scroller">
+                <section class="intro">
+                    <p>Made by <span><b>Jeremiah Udoh</b></span></p>
+                </section>
+                <!-- END Section -->
+
+                <!-- BEGIN -->
+                <article>
+                    <h2>Credits</h2>
+                    <dl>
+                        <dt>Project Name</dt>
+                        <dd>Polluguard</dd>
+                        <dt>Project Creator</dt>
+                        <dd><a href="https://www.linkedin.com/in/jeremiah-udoh" target="_blank">Jeremiah Udoh</a></dd>
+                        <dt>Advisor</dt>
+                        <dd>Professor Simon wells</dd>
+                        <dt>Development Team</dt>
+                        <dd>Developer: <br> Jeremiah Udoh</dd>
+                        <dt>Contributors</dt>
+                        <dd>Shuaibu Muhammad Salim (Environmental Research)</dd>
+                        <dt>Technology Stack</dt>
+                        <dd>HTML <br> CSS <br>Vanilla JavaScript</dd>
+                        <dt>Data Sources and APIs</dt>
+                        <dd>Open-Meteo.com (Weather and Air Quality Data) <br>Environmental Rights Action (ERA)
+                            <br>Health of Mother Earth Foundation (HOMEF) <br> MDN Web Docs <br> W3Schools Online
+                        </dd>
+                        <dt>Special Thanks</dt>
+                        <dd>Faculty of Computing, Edinburgh Napier University <br>All the volunteers <br>Friends and
+                            community members who participated <br>in user testing and provided valuable feedback</dd>
+                        <dt>Contact Information</dt>
+                        <dd>For further inquiries or to report an issue<br>please contact me at <br>judohsun@gmail.com</dd>
+                    </dl>
+
+                </article>
+                <!-- END -->
+
+                <!-- BEGIN Section -->
+                <div class="scroller_wrapper_last">
+                    <h3>Thanks</h3>
+                </div>
+                <!-- END Section -->
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+    <script src="server.js"></script>
 </body>
+
 </html>

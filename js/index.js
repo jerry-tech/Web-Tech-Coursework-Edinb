@@ -32,7 +32,9 @@ if (personalizationName === "") {
     if (modal.classList.contains("hide")) {
         modal.classList.remove("hide");
     }
-    if (document.getElementById('greetings')) {
+    if (document.getElementById('greetings') && personalizationName != "") {
+        document.getElementById('greetings').textContent = greeting() + ", " +  personalizationName.split(' ')[0];
+    }else{
         document.getElementById('greetings').textContent = greeting();
     }
 }else{
