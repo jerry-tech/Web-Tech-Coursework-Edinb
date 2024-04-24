@@ -105,7 +105,7 @@ const callPollutionHistoryAPI = () => {
         });
 }
 
-// callPollutionHistoryAPI();
+callPollutionHistoryAPI();
 const updatePollutionWeatherUI = (pollutionData) => {
     document.getElementById('pm10').textContent = `${pollutionData.current.pm10}${pollutionData.currentUnits.pm10}`;
     document.getElementById('pm2_5').textContent = `${pollutionData.current.pm25}${pollutionData.currentUnits.pm25}`;
