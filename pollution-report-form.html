@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="./css/variable.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/pollution-report-form.css">
+    <!-- W3Schools. (n.d.). HTML Tutorial. Retrieved from https://www.w3schools.com/html/html_favicon.asp -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <meta name="description"
-    content="PolluGuard: Your dedicated environmental watchdog. We empower communities with real-time pollution monitoring and reporting tools, enabling actionable insights into air, water, and soil quality. Join us in safeguarding our planet for future generations.">
+        content="PolluGuard: Your dedicated environmental watchdog. We empower communities with real-time pollution monitoring and reporting tools, enabling actionable insights into air, water, and soil quality. Join us in safeguarding our planet for future generations.">
     <title>Polluguard</title>
 </head>
- 
+
 <body class="pr">
     <aside>
         <div id="sideNav" class="sidenav">
@@ -25,7 +27,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
 
-            <a href="./pollution_index.html">Pollution Index</a> 
+            <a href="./pollution_index.html">Pollution Index</a>
             <a href="./pollution-report-form.html">Reporting</a>
             <a href="./about-us.html">About</a>
             <a href="./credits.html">Credits</a>
@@ -41,10 +43,10 @@
                 <div class="nav-list">
                     <ul class="nav-list-items" id="topNav">
                         <li onclick="document.location='./index.html'" class="logo pointer">
-                           <img src="./img/logo.svg" alt="">
+                            <img src="./img/logo.svg" alt="">
                         </li>
                         <li><a href="./pollution_index.html">Pollution Index</a></li>
-                        <li><a href="./pollution-report-form.html" class="nav-active" >Report Pollution</a></li>
+                        <li><a href="./pollution-report-form.html" class="nav-active">Report Pollution</a></li>
                         <li><a href="./about-us.html">About</a></li>
                         <li>
                             <a href="./credits.html">Credits</a>
@@ -61,8 +63,8 @@
     </main>
 
     <div class="container_variable_2">
-         <!-- Display Message Container -->
-         <div id="messageContainer" class="alert alert-success mt-1 p-2" style="display: none;">
+        <!-- Display Message Container -->
+        <div id="messageContainer" class="alert alert-success mt-1 p-2" style="display: none;">
             <div style="display: flex; align-items: center; justify-content: center;">
                 <i id="messageIcon" style="font-size: 25px;"></i>
                 <span style="margin-left: 10px;" id="message"></span>
@@ -105,26 +107,25 @@
             </select>
 
             <label for="fullName" class="label">Full Name</label>
-            <input class="mb-1" type="text" id="fullName"
-            placeholder="John Doe" required>     
+            <input class="mb-1" type="text" id="fullName" placeholder="John Doe" required>
 
             <label for="image" class="label required">Image </label>
-            <input type="file"  id="image" accept="image/*" 
-                    placeholder="Upload image">
+            <input type="file" id="image" accept="image/*" placeholder="Upload image">
             <sub>Accepted format png, jpg, jpeg not more than 500kb.</i>
 
-            <div style="width: 100%;" class="mt-2">
-                <p class="required" style="font-size: .9rem; font-weight: 300;">Have something more to share?</p>
-                <textarea placeholder="Tell us more(maximum of 150 characters)..." rows="5" maxlength="150" id="additionalInfo"></textarea>
-            </div>
+                <div style="width: 100%;" class="mt-2">
+                    <p class="required" style="font-size: .9rem; font-weight: 300;">Have something more to share?</p>
+                    <textarea placeholder="Tell us more(maximum of 150 characters)..." rows="5" maxlength="150"
+                        id="additionalInfo"></textarea>
+                </div>
 
 
-            <div class="col-auto" style="display: flex; align-items: center;">
-                <button type="submit" id="submitButton" class="btn-dark w-100" style="padding: .5rem 1rem;">
-                    <span id="buttonText">Report Pollution</span>
-                    <span id="loader" style="display: none;"><span class="fa fa-spinner fa-spin"></span></span>
-                </button>
-            </div>
+                <div class="col-auto" style="display: flex; align-items: center;">
+                    <button type="submit" id="submitButton" class="btn-dark w-100" style="padding: .5rem 1rem;">
+                        <span id="buttonText">Report Pollution</span>
+                        <span id="loader" style="display: none;"><span class="fa fa-spinner fa-spin"></span></span>
+                    </button>
+                </div>
         </form>
     </div>
 
