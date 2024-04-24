@@ -125,6 +125,7 @@ export const toTitleCase = (str) => {
 }
 
 // Function to open the IndexedDB database
+//MDN Web Docs: Retrieved from https://developer.mozilla.org/en-US/docs/Web/API/IDBCursor
 export const openDatabase = () => {
   return new Promise((resolve, reject) => {
       var request = window.indexedDB.open(DATABASE_NAME, 1);
@@ -152,6 +153,7 @@ export const openDatabase = () => {
 }
 
 // Function to retrieve form data from IndexedDB
+//MDN Web Docs: Retrieved from https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/getAll
 export const retrieveFormDataFromDB = () => {
   return new Promise((resolve, reject) => {
       openDatabase().then(db => {
@@ -174,7 +176,7 @@ export const retrieveFormDataFromDB = () => {
 }
 
 // Function to delete form data from IndexedDB
-// https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/delete
+// MDN Web Docs: Retrieved from https://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/delete
 export const deleteFormDataFromDB = (id) => {
   return new Promise((resolve, reject) => {
       openDatabase().then(db => {
