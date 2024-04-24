@@ -584,7 +584,7 @@ tr:nth-child(even) {
 /* input styling */
 
 input {
-    padding: .7rem .2rem;
+    padding: .7rem .3rem;
     width: calc(100% - 9px);
     border: solid 1px var(--dark_25);
     border-radius: 5px;

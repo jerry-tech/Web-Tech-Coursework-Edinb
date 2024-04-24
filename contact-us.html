@@ -1,11 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- W3Schools. (n.d.). HTML Tutorial. Retrieved from https://www.w3schools.com/html/html_favicon.asp -->
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/variable.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Polluguard | Contact Us</title>
+    <style>
+        .d-flex {
+            display: flex;
+            align-items: start;
+            flex-wrap: wrap;
+        }
+
+        .d-flex-container {
+            display: flex;
+            align-self: start;
+            justify-content: space-between;
+            width: 100% !important;
+        }
+
+        .mr-2 {
+            margin-right: 2.5%;
+        }
+
+        .icon-border {
+            border: 2px solid var(--text-primary);
+            padding: 0.7em 0.5em;
+            width: 6%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icon {
+            border: 1px solid var(--text-primary);
+            padding: 0.2em 0.9em;
+            width: 4%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-icon {
+            font-size: 30px;
+            color: var(--text-primary);
+        }
+
+        .fa.fa-twitter {
+            font-family: sans-serif;
+        }
+
+        .fa.fa-twitter::before {
+            content: "𝕏";
+            font-size: 1.0em;
+        }
+
+        .section-1 {
+            width: 55%;
+        }
+
+        .section-2 {
+            background: #F4F6FE;
+            width: 45%;
+            padding: 3em 1.5em 0.1em 1.2em;
+            border-radius: 5px;
+        }
+
+        input {
+            padding: .9rem .5rem;
+            width: calc(100% - 9px);
+            border: solid 1px var(--dark_50);
+            border-radius: 5px;
+            font-style: normal !important;
+            width: 95%;
+        }
+
+        input[type="text"]:focus {
+            background-color: none !important;
+        }
+
+        textarea {
+            width: 96%;
+            margin-bottom: 10px;
+            padding: 6px;
+            border: solid 1px var(--dark_25);
+            border-radius: 5px;
+        }
+
+        .social-icon-container {
+            width: 30%;
+        }
+
+        @media screen and (width < 900px) {
+            .d-flex-container {
+                flex-direction: column;
+            }
+
+            .section-2 {
+                margin-top: 50px;
+                width: 85%;
+            }
+
+            .section-1 {
+                width: 100%;
+            }
+
+            .social-icon-container {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+    <aside>
+        <div id="sideNav" class="sidenav">
+
+            <div class="top-cover">
+                <div class="logo sec" style="padding: 0 1rem;">
+                    <a href="/"><img src="./img/logo.svg" alt="" class="logo-img"></a>
+                </div>
+
+                <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
+            </div>
+
+            <a href="./pollution_index.html">Pollution Index</a>
+            <a href="./pollution-report-form.html">Reporting</a>
+            <a href="./about-us.html">About</a>
+            <a href="./credits.html">Credits</a>
+        </div>
+    </aside>
+    <main class="container">
+        <section class="header">
+            <div class="mt-4 header-content">
+                <div class="nav-list" style="width: 100%;">
+                    <ul class="nav-list-items" id="topNav">
+                        <li class="logo">
+                            <a><img src="./img/logo.svg" alt=""></a>
+                        </li>
+                        <li><a href="./pollution_index.html" class="nav-active">Pollution Index</a></li>
+                        <li><a href="./pollution-report-form.html">Report Pollution</a></li>
+                        <li><a href="./about-us.html">About</a></li>
+                        <li>
+                            <a href="./credits.html">Credits</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="javascript:void(0);" class="icon" onclick="openClose()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <div class="d-flex-container container">
+        <section class="section-1">
+            <div class="col">
+                <h1 class="mb-3">Contact Us</h1>
+            </div>
+            <div class="d-flex mb-2">
+                <div class="mr-2 icon-border">
+                    <i class="fa fa-bars contact-icon"></i>
+                </div>
+                <div class="col">
+                    <h2 class="mb-1">Send Us an Email</h4>
+                        <p style="font-weight: normal;">judohsun@gmail.com</p>
+                </div>
+            </div>
+            <div class="d-flex mb-2">
+                <div class="mr-2 icon-border">
+                    <i class="fa fa-comment contact-icon"></i>
+                </div>
+                <div class="col">
+                    <h2 class="mb-1">Give Us a Call</h4>
+                        <p style="font-weight: normal;">+91 098 098 8393</p>
+                </div>
+            </div>
+            <div class="d-flex mb-2">
+                <div class="mr-2 icon-border">
+                    <i class="fa fa-map-marker contact-icon"></i>
+                </div>
+                <div class="col">
+                    <h2 class="mb-1">Drop By and Talk</h4>
+                        <p style="font-weight: normal;">Marina, Lagos Island Lagos, Nigeria</p>
+                </div>
+            </div>
+            <div class="d-flex social-icon-container">
+                <div class="mr-2 social-icon">
+                    <i class="fa fa-facebook contact-icon"></i>
+                </div>
+                <div class="mr-2 social-icon">
+                    <i class="fa fa-twitter contact-icon"></i>
+                </div>
+                <div class="mr-2 social-icon">
+                    <i class="fa fa-instagram contact-icon"></i>
+                </div>
+                <div class="mr-2 social-icon">
+                    <i class="fa fa-linkedin contact-icon"></i>
+                </div>
+            </div>
+        </section>
+        <section class="section-2">
+            <!-- Display Message Container -->
+            <div id="messageContainer" class="alert alert-success p-2" style="display: none;">
+                <div style="display: flex; align-items: center; justify-content: center;">
+                    <i id="messageIcon" style="font-size: 25px;"></i>
+                    <span style="margin-left: 10px;" id="message"></span>
+                </div>
+            </div>
+            <!-- Ending Display Message Container -->
+            <form id="myForm">
+                <div class="form-group mb-1">
+                    <input type="text" placeholder="NAME" id="fullName" required>
+                </div>
+                <div class="form-group mb-1">
+                    <input type="tel" placeholder="MOBILE" id="mobile" name="mobile" required>
+                </div>
+                <div class="form-group mb-1">
+                    <input type="email" placeholder="EMAIL" id="email" name="email" required>
+                </div>
+                <div class="form-group mb-1">
+                    <textarea rows="5" maxlength="150" id="message" placeholder="MESSAGE" name="message" rows="5"
+                        required></textarea>
+                </div>
+            </form>
+            <button class="btn w-100 bg-dark" id="submitButton" type="submit">Submit</button>
+    </div>
+    </div>
+
+    <section class="footer">
+        <div class="footer_container">
+            <div class="footer_row">
+                <div class="footer-col">
+                    <img src="./img/logo.svg" alt="">
+                </div>
+
+                <div class="footer-col">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="./pollution_index.html">Pollution Index</a></li>
+                        <li><a href="./pollution-report-form.html">Pollution Report Form</a></li>
+                        <li><a href="./pollution_report.html">Pollution Report History</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Extras</h4>
+                    <ul>
+                        <li><a href="./about-us.html">About</a></li>
+                        <li><a href="./credits.html">Credits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Get help</h4>
+                    <ul>
+                        <li><a href="./contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Javascript -->
+    <script src="./js/constant.js" type="module"></script>
+    <script src="./js/contact.js" type="module"></script>
+    <script src="./js/server.js"></script>
+    <script>
+
+    </script>
 </body>
+
 </html>

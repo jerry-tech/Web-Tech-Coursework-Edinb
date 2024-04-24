@@ -1,5 +1,11 @@
-import { toTitleCase, openDatabase, displayMessage, fetchStateData, fetchCountryData, navigateByUrl } from './utils.js';
-import { MAX_FILE_UPLOAD } from './constant.js';
+import { getCookie, toTitleCase, openDatabase, displayMessage, fetchStateData, fetchCountryData, navigateByUrl } from './utils.js';
+import { MAX_FILE_UPLOAD, USERNAME_COOKIE_KEY } from './constant.js';
+
+let personalizationName = getCookie(USERNAME_COOKIE_KEY);
+if (personalizationName !== "") {
+    var nameInput = document.getElementById("fullName");
+    nameInput.value = personalizationName;
+}
 
 //Load Countries.json
 document.addEventListener("DOMContentLoaded", function () {

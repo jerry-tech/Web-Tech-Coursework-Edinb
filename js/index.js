@@ -15,11 +15,11 @@ const greeting = () => {
 }
 
 // Update the content of the HTML element with id 'current_time' && 'current_date'
-if(document.getElementById('current_date')){
-  document.getElementById('current_date').textContent = getCurrentDate();  
+if (document.getElementById('current_date')) {
+    document.getElementById('current_date').textContent = getCurrentDate();
 }
-if(document.getElementById('current_time')){
-  document.getElementById('current_time').textContent = getCurrentTime();
+if (document.getElementById('current_time')) {
+    document.getElementById('current_time').textContent = getCurrentTime();
 }
 
 //Getting Cookie    
@@ -32,14 +32,10 @@ if (personalizationName === "") {
     if (modal.classList.contains("hide")) {
         modal.classList.remove("hide");
     }
-    if (document.getElementById('greetings') && personalizationName != "") {
-        document.getElementById('greetings').textContent = greeting() + ", " +  personalizationName.split(' ')[0];
-    }else{
-        document.getElementById('greetings').textContent = greeting();
-    }
-}else{
+    document.getElementById('greetings').textContent = greeting();
+} else {
     if (document.getElementById('greetings')) {
-        document.getElementById('greetings').textContent = greeting() + ", " +  personalizationName.split(' ')[0];
+        document.getElementById('greetings').textContent = greeting() + ", " + personalizationName.split(' ')[0];
     }
 }
 
@@ -50,8 +46,10 @@ personalizationForm.addEventListener("submit", (e) => {
     //Getting value from form field
     let personalizationName = document.getElementById("personal_name").value;
     if (personalizationName != "" && personalizationName != null) {
-      setCookie(USERNAME_COOKIE_KEY, personalizationName, 365);
-      closeModal();
+        setCookie(USERNAME_COOKIE_KEY, personalizationName, 365);
+        closeModal();
+
+        document.getElementById('greetings').textContent = greeting() + ", " + personalizationName.split(' ')[0];
     }
 });
 
