@@ -194,3 +194,6 @@ body{
 .citation-text{
     font-style: italic; text-align: right; font-weight: bold;
 }
+.icon{
+    margin-top: 0px !important;
+}
