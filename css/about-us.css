@@ -141,3 +141,15 @@ padding: 20px;
 .icon {
     margin-top: 0px !important; 
    }
+
+
+/*Addition*/
+
+.name-role{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.role-image{
+    border-radius: 6px;
+}

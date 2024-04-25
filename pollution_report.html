@@ -25,7 +25,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
             <a href="./pollution_index.html">Pollution Index</a>
-            <a href="./pollution-report-form.html">Reporting</a>
+            <a href="./pollution-report-form.html">Pollution Reporting</a>
             <a href="./about-us.html">About</a>
             <a href="./credits.html">Credits</a>
         </div>
@@ -46,7 +46,7 @@
                             <img src="img/logo.svg" alt="">
                         </li>
                         <li><a href="./pollution_index.html">Pollution Index</a></li>
-                        <li><a href="./pollution-report-form.html" class="nav-active">Report Pollution</a></li>
+                        <li><a href="./pollution-report-form.html" class="nav-active">Pollution Reporting</a></li>
                         <li><a href="./about-us.html">About</a></li>
                         <li>
                             <a href="./credits.html">Credits</a>
@@ -72,43 +72,40 @@
         </div>
         <!-- Ending Display Message Container -->
         <div class="table_top row justify-content-between align-items-center">
-            <h1>Pollution Report</h1>
+            <h2>Pollution Report</h2>
             <a href="./pollution-report-form.html" class="no-text-decoration"><button class="btn report_btn">Report
                     Pollution</button></a>
         </div>
 
         <div class="mb-1">
             <form class="card" id="filterForm" method="get">
-                <div class="row" style="font-size: medium; font-weight: 300;">
-                    <div class="col" style="width: 30%;">
-                        <div class="label" for="search">Full Name</div>
-                        <input type="text" id="nameFilter" placeholder="Search full name">
-                    </div>
-                    <div class="col" style="width: 10%;">
-                        <div class="label" for="search">Pollution type</div>
-                        <select name="search" id="pollutionTypeFilter" type="options">
-                            <option value="">Select a Pollution Type</option>
-                            <option value="Air">Air</option>
-                            <option value="Land">Land</option>
-                            <option value="Water">Water</option>
-                            <option value="Noise">Noise</option>
-                            <option value="Light">Light</option>
-                            <option value="Thermal">Thermal</option>
-                            <option value="Radioactive">Radioactive</option>
-                            <option value="Plastic">Plastic</option>
-                            <option value="Others">Others</option>
-                        </select>
-                    </div>
-                    <!-- <div class="col">
-                        <div class="label" for="search">Status</div>
-                        <select name="search" id="search" type="options">
-                            <option value="Closed">Closed</option>
-                            <option value="Pending">Pending</option>
-                        </select>
-                    </div> -->
-                    <div class="col-auto" style="display: flex; align-items: center;">
-                        <button type="submit" class="btn" id="searchRecords">Search</button>
-                    </div>
+                <div class="col-12" style="font-size: medium; font-weight: 300;">
+                  
+                        <div class="d-flex">
+                            <div class="col-12 mr-2">
+                                <div class="label" for="search">Full Name</div>
+                                <input type="text" id="nameFilter" placeholder="Search full name">
+                            </div>
+                            <br>
+                            <div class="col-12 mr-2">
+                                <div class="label" for="search">Pollution type</div>
+                                <select name="search" id="pollutionTypeFilter" type="options">
+                                    <option value="">Select a Pollution Type</option>
+                                    <option value="Air">Air</option>
+                                    <option value="Land">Land</option>
+                                    <option value="Water">Water</option>
+                                    <option value="Noise">Noise</option>
+                                    <option value="Light">Light</option>
+                                    <option value="Thermal">Thermal</option>
+                                    <option value="Radioactive">Radioactive</option>
+                                    <option value="Plastic">Plastic</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn" style="float: right" id="searchRecords">Search</button>
+                            </div>
+                        </div>
                 </div>
             </form>
         </div>

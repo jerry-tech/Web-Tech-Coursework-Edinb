@@ -25,10 +25,10 @@ function closeModal() {
   }
 }
 
-function showModal(){
+function showModal() {
   var modal = document.querySelector(".modal");
   if (modal.classList.contains("hide")) {
-      modal.classList.remove("hide");
+    modal.classList.remove("hide");
   }
 }
 
@@ -36,22 +36,86 @@ function hideDiv() {
   // Correctly use getElementById without the '#' prefix
   var hidden = document.getElementById("toBeHidden");
 
-  if(hidden != undefined){
-  // Function to check the window width and hide/show the div
-  function checkWindowSize() {
-    if (window.innerWidth < 900) {
-      hidden.classList.add("hide");
-    } else {
-      hidden.classList.remove("hide");
+  if (hidden != undefined) {
+    // Function to check the window width and hide/show the div
+    function checkWindowSize() {
+      if (window.innerWidth < 900) {
+        hidden.classList.add("hide");
+      } else {
+        hidden.classList.remove("hide");
+      }
     }
-  }
 
-  // Listen for resize events
-  window.addEventListener("resize", checkWindowSize);
+    // Listen for resize events
+    window.addEventListener("resize", checkWindowSize);
 
-  // Check the window size immediately in case it's already less than 900px
-  checkWindowSize();
+    // Check the window size immediately in case it's already less than 900px
+    checkWindowSize();
   }
 }
 
 hideDiv();
+
+
+const news = document.querySelector("#more_news");
+const contReading = document.querySelector(".cont_readn");
+
+
+function hideNews() {
+  if (news.classList.contains("d-none") === true) {
+    news.classList.remove("d-none");
+    contReading.innerHTML = "<strong><em>Read less <<</em></strong>";
+  } else {
+    news.classList.add("d-none");
+    contReading.innerHTML = "<strong><em>Continue reading >></em></strong>";
+  }
+}
+
+
+const news2 = document.querySelector("#more_news_2");
+const contReading2 = document.querySelector(".cont_readn_2");
+
+function hideNews2() {
+  if (news2.classList.contains("d-none") === true) {
+    news2.classList.remove("d-none");
+    contReading2.innerHTML = "<strong><em>Read less <<</em></strong>";
+  } else {
+    news2.classList.add("d-none");
+    contReading2.innerHTML = "<strong><em>Continue reading >></em></strong>";
+  }
+}
+
+const news3 = document.querySelector("#more_news_3");
+const contReading3 = document.querySelector(".cont_readn_3");
+
+function hideNews3() {
+  if (news3.classList.contains("d-none") === true) {
+    news3.classList.remove("d-none");
+    contReading3.innerHTML = "<strong><em>Read less <<</em></strong>";
+  } else {
+    news3.classList.add("d-none");
+    contReading3.innerHTML = "<strong><em>Continue reading >></em></strong>";
+  }
+}
+
+function previousArticle() {
+  var currentURL = window.location.href;
+
+  if (currentURL.endsWith("/blog.html#article_2")) {
+    window.location.href = "./blog.html#article_1";
+  } else if (currentURL.endsWith("/blog.html#article_3")) {
+    window.location.href = "./blog.html#article_2";
+  }
+  window.scrollTo(0, 0);
+}
+
+function nextArticle() {
+  var currentURL = window.location.href;
+
+  if (currentURL.endsWith("/blog.html#article_1")) {
+    window.location.href = "./blog.html#article_2";
+  } else if (currentURL.endsWith("/blog.html#article_2")) {
+    window.location.href = "./blog.html#article_3";
+  }
+  window.scrollTo(0, 0);
+}

@@ -1,54 +1,30 @@
 /* blog_container class */
-
+body{
+    background: whitesmoke;
+}
 .blog_container {
+    width: calc(100vw - 90px);
     padding-right: 15px;
     padding-left: 15px;
-
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    height: 100%;
 }
-
-
-
 .blog_container>*:nth-of-type(1) {
-    grid-column: span 3;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 20px;
-
     position: relative;
-    min-height: 200px;
+    min-height: 400px;
 }
 
-
 .blogs_wrapper {
+    display: flex;
     height: calc(100% - 200px);
     overflow-x: scroll;
     overscroll-behavior-inline: contain;
     scroll-behavior: smooth;
-
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 98%;
-}
-
-.blogs_wrapper:after {
-    content: '';
-    width: 1%;
-    height: calc(100vh - 260px);
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(3.8px);
-    -webkit-backdrop-filter: blur(3.8px);
-
-    position: absolute;
-    right: 10px;
+    margin: auto;
+    color: black;
 }
 
 .blog_text {
@@ -59,13 +35,10 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 1.5rem;
     color: var(--white);
-
     text-align: center;
-
     display: flex;
     flex-direction: column;
     gap: 10px;
-
     font-size: calc(16px + 6*((10vw - 30px) / 120));
 }
 
@@ -158,4 +131,54 @@
         grid-template-columns: auto;
 
     }
+}
+
+/* flex  */
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.col {
+    width: 100%;
+}
+
+.d-none {
+    display: none;
+}
+
+.cont_readn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: relative;
+    top: -10px;
+}
+
+.cont_readn_2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: relative;
+    top: -10px;
+}
+
+.cont_readn_3 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    position: relative;
+    top: -10px;
+}
+
+.body-section{
+    background: none;
+    margin: auto;
+    border-radius: 5px;
 }

@@ -55,7 +55,7 @@
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
             <a href="./pollution_index.html">Pollution Index</a>
-            <a href="./pollution-report-form.html">Reporting</a>
+            <a href="./pollution-report-form.html">Pollution Reporting</a>
             <a href="./about-us.html">About</a>
             <a href="./credits.html">Credits</a>
         </div>
@@ -70,7 +70,7 @@
                         <li class="logo">
                             <a><img src="./img/logo.svg" alt=""></a>
                         </li>
-                         
+
                         <li><a href="./pollution_index.html" class="nav-active">Pollution Index</a></li>
                         <li><a href="./pollution-report-form.html">Pollution Reporting</a></li>
                         <li><a href="./about-us.html">About</a></li>
@@ -91,10 +91,10 @@
 
             <div class="welcome-msg mt-4">
                 <div class="greetings">
-                    <h2 id="greetings">Good Morning</h2>
+                    <h2 id="greetings" class="top-greeting">Good Morning</h2>
                 </div>
                 <br>
-                <small class="info">
+                <small class="info bottom-greeting">
                     Pollution is bad for our ecosystem be informed, take action!
                 </small>
             </div>
@@ -145,11 +145,11 @@
         <section class="news mt-4">
             <div class="card">
                 <div class="card-content">
-                    <div>
-                        <h3>
+                    <div class="responsive-col">
+                        <h3 class="top-text">
                             News
                         </h3>
-                        <span style="text-wrap: nowrap;">about Pollution</span>
+                        <h3 class="bottom-text">about Pollution</h3>
                     </div>
 
                     <div class="col-md-3 pointer" onclick="document.location='./blog.html#article_1'">
@@ -193,34 +193,35 @@
     <section class="footer">
         <div class="footer_container">
             <div class="footer_row">
-                <div class="footer-col">
+                <div class="responsive-col footer-col">
                     <img src="./img/logo.svg" alt="">
                 </div>
 
                 <div class="footer-col">
-                    <h4>Features</h4>
+                    <h4 class="footer-top">Features</h4>
                     <ul>
-                        <li><a href="./pollution_index.html">Pollution Index</a></li>
-                        <li><a href="./pollution-report-form.html">Pollution Report Form</a></li>
-                        <li><a href="./pollution_report.html">Pollution Report History</a></li>
+                        <li><a class="footer-bottom" href="./pollution_index.html">Pollution Index</a></li>
+                        <li><a class="footer-bottom" href="./pollution-report-form.html">Pollution Report Form</a></li>
+                        <li><a class="footer-bottom" href="./pollution_report.html">Pollution Report History</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Extras</h4>
+                    <h4 class="footer-top">Extras</h4>
                     <ul>
-                        <li><a href="./about-us.html">About</a></li>
-                        <li><a href="./credits.html">Credits</a></li>
+                        <li><a class="footer-bottom" href="./about-us.html">About</a></li>
+                        <li><a class="footer-bottom" href="./credits.html">Credits</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Get help</h4>
+                    <h4 class="footer-top">Get help</h4>
                     <ul>
-                        <li><a href="./contact-us.html">Contact Us</a></li>
+                        <li><a class="footer-bottom" href="./contact-us.html">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Javascript -->
     <script src="./js/constant.js" type="module"></script>

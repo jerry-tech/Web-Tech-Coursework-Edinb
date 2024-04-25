@@ -170,7 +170,6 @@ main {
     position: relative;
     transform: translate(50%, 100%);
     font-size: 2rem;
-    margin-top: -130px;
     color: var(--text-dark);
 }
 
@@ -996,6 +995,56 @@ figure {
 
 /*responsive*/
 @media(width < 767px) {
+
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .top-text{
+        font-size: 2.5em;
+    }
+
+    .bottom-text{
+        font-size: 1.4em;
+        line-height: 32px;
+        font-weight: 400;
+    }
+
+    .welcome-msg {
+        display: grid;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .top-greeting{
+        font-size: 2.5em;
+    }
+
+    .bottom-greeting{
+        font-size: 1.4em;
+        line-height: 32px;
+
+    }
+
+
+    .footer-top{
+        font-size: 24px !important;
+        font-weight: 500 !important;
+    }
+
+    .info{
+        max-width: 360px;
+    }
+
+    .footer-bottom{
+        font-size: 18px !important;
+    }
+
+    .d-md-block{
+        display: none;
+    }
+    
     .footer-col {
         width: 50%;
         margin-bottom: 30px;
@@ -1084,4 +1133,40 @@ figure {
 .quote-container:before {
     content: url(../img/left-quote.svg);
     width: 50%;
+}
+
+/*ADDITIONS*/
+
+@media only screen and (min-width: 768px) {
+    .responsive-col{
+        width: 33.33%;
+    }
+}
+
+img {
+    max-inline-size: 100%;
+    block-size: auto;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.news-image-1 {
+
+    border-radius: 5%;
+}
+
+.text{
+    line-height: 20px;
+}
+
+.top-text{
+    font-size: 30px;
+    margin-top: 1rem;
+
+}
+
+.bottom-text{
+    text-wrap: nowrap;
+    font-size: 25px;
+    font-weight: 700;
 }

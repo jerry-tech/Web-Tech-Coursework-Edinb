@@ -26,8 +26,9 @@
 
                 <a href="javascript:void(0)" class="closebtn" onclick="openClose()">&times;</a>
             </div>
-            <a href="./pollution_index.html">Pollution Index</a>
-            <a href="./pollution-report-form.html">Reporting</a>
+
+            <a href="./pollution_index.html">Pollution Index</a> 
+            <a href="./pollution-report-form.html">Pollution Reporting</a>
             <a href="./about-us.html">About</a>
             <a href="./credits.html">Credits</a>
         </div>
@@ -42,10 +43,10 @@
                 <div class="nav-list">
                     <ul class="nav-list-items" id="topNav">
                         <li onclick="document.location='./index.html'" class="logo pointer">
-                            <img src="./img/logo.svg" alt="">
+                           <img src="./img/logo.svg" alt="">
                         </li>
                         <li><a href="./pollution_index.html">Pollution Index</a></li>
-                        <li><a href="./pollution-report-form.html" class="nav-active">Report Pollution</a></li>
+                        <li><a href="./pollution-report-form.html" class="nav-active">Pollution Reporting</a></li>
                         <li><a href="./about-us.html">About</a></li>
                         <li>
                             <a href="./credits.html">Credits</a>
@@ -62,8 +63,8 @@
     </main>
 
     <div class="container_variable_2">
-        <!-- Display Message Container -->
-        <div id="messageContainer" class="alert alert-success mt-1 p-2" style="display: none;">
+         <!-- Display Message Container -->
+         <div id="messageContainer" class="alert alert-success mt-1 p-2" style="display: none;">
             <div style="display: flex; align-items: center; justify-content: center;">
                 <i id="messageIcon" style="font-size: 25px;"></i>
                 <span style="margin-left: 10px;" id="message"></span>
@@ -73,7 +74,7 @@
         <div class="table_top mb-2">
             <h2>See it, Smell it, Report it.</h2>
             <br>
-            <div style="font-size: 1rem; font-weight: 300;">
+            <div style="line-height: 30px;">
                 Take a stand for our environment! If you see pollution, smell pollution, don't ignore it – report it.
                 Your vigilance is
                 crucial in preserving our planet's health. Let's work together to ensure clean air, water, and land for
@@ -84,52 +85,64 @@
 
         <form id="survey-form" class="mb-3">
 
-            <div class="label required" for="countrySelect">Country</div>
-            <select class="mb-1" name="search" id="countrySelect" type="options" required>
-                <option value="l1">Select Country</option>
-            </select>
-            <div class="label required" for="stateSelect">State</div>
-            <select class="mb-1" name="search" id="stateSelect" type="options" required>
-                <option value="l1">Select State</option>
-            </select>
-            <div class="label required" for="pollutionType">Pollution Type </div>
-            <select name="search" class="mb-1" id="pollutionType" type="options">
-                <option value="Air">Air</option>
-                <option value="Land">Land</option>
-                <option value="Water">Water</option>
-                <option value="Noise">Noise</option>
-                <option value="Light">Light</option>
-                <option value="Thermal">Thermal</option>
-                <option value="Radioactive">Radioactive</option>
-                <option value="Plastic">Plastic</option>
-                <option value="Others">Others</option>
-            </select>
+           <div>
+               <div class="label required" for="countrySelect">Country</div>
+               <select class="mb-1" name="search" id="countrySelect" type="options" required>
+                   <option value="l1">Select Country</option>
+               </select>
+           </div>
+            <div>
+                <div class="label required" for="stateSelect">State</div>
+                <select class="mb-1" name="search" id="stateSelect" type="options" required>
+                    <option value="l1">Select State</option>
+                </select>
+            </div>
+            <div>
+                <div class="label required" for="pollutionType">Pollution Type </div>
+                <select name="search" class="mb-1" id="pollutionType" type="options">
+                    <option value="Air">Air</option>
+                    <option value="Land">Land</option>
+                    <option value="Water">Water</option>
+                    <option value="Noise">Noise</option>
+                    <option value="Light">Light</option>
+                    <option value="Thermal">Thermal</option>
+                    <option value="Radioactive">Radioactive</option>
+                    <option value="Plastic">Plastic</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
 
-            <label for="fullName" class="label">Full Name</label>
-            <input class="mb-1" type="text" id="fullName" placeholder="John Doe" required>
+            <div>
+                <div for="fullName" class="label">Full Name</div>
+                <input class="mb-1" type="text" id="fullName"
+                       placeholder="John Doe" required>
+            </div>
 
-            <label for="image" class="label required">Image </label>
-            <input type="file" id="image" accept="image/*" placeholder="Upload image">
-            <sub>Accepted format png, jpg, jpeg not more than 500kb.</i>
+            <div>
+                <div for="image" class="label required">Image </div>
+                <input type="file"  id="image" accept="image/*"
+                       placeholder="Upload image">
+                <sub>Accepted format png, jpg, jpeg not more than 500kb.</i>
+            </div>
 
-                <div style="width: 100%;" class="mt-2">
-                    <p class="required" style="font-size: .9rem; font-weight: 300;">Have something more to share?</p>
-                    <textarea placeholder="Tell us more(maximum of 150 characters)..." rows="5" maxlength="150"
-                        id="additionalInfo"></textarea>
-                </div>
+            <div style="width: 100%;" class="mt-1">
+                <div class="required label">Have something more to share?</div>
+                <textarea placeholder="Tell us more(maximum of 150 characters)..." rows="5" maxlength="150" id="additionalInfo"></textarea>
+            </div>
 
 
-                <div class="col-auto" style="display: flex; align-items: center;">
-                    <button type="submit" id="submitButton" class="btn-dark w-100" style="padding: .5rem 1rem;">
-                        <span id="buttonText">Report Pollution</span>
-                        <span id="loader" style="display: none;"><span class="fa fa-spinner fa-spin"></span></span>
-                    </button>
-                </div>
+            <div class="col-auto" style="display: flex; align-items: center;">
+                <button type="submit" id="submitButton" class="btn-dark w-100" style="padding: .5rem 1rem;">
+                    <span id="buttonText">Report Pollution</span>
+                    <span id="loader" style="display: none;"><span class="fa fa-spinner fa-spin"></span></span>
+                </button>
+            </div>
         </form>
     </div>
 
     <script src="./js/server.js"></script>
     <script src="./js/pollution_form.js" type="module"></script>
 </body>
+
 
 </html>
