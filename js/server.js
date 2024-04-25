@@ -98,13 +98,21 @@ function hideNews3() {
   }
 }
 
+function navigate(urlPath) {
+  var a = document.createElement('a');
+  a.href = urlPath;
+  document.body.appendChild(a);
+  a.click();
+}
+
+
 function previousArticle() {
   var currentURL = window.location.href;
 
   if (currentURL.endsWith("/blog.html#article_2")) {
-    window.location.href = "./blog.html#article_1";
+    navigate('./blog.html#article_1');
   } else if (currentURL.endsWith("/blog.html#article_3")) {
-    window.location.href = "./blog.html#article_2";
+    navigate('./blog.html#article_2');
   }
   window.scrollTo(0, 0);
 }
@@ -113,9 +121,9 @@ function nextArticle() {
   var currentURL = window.location.href;
 
   if (currentURL.endsWith("/blog.html#article_1")) {
-    window.location.href = "./blog.html#article_2";
+    navigate('./blog.html#article_2');
   } else if (currentURL.endsWith("/blog.html#article_2")) {
-    window.location.href = "./blog.html#article_3";
+    navigate('./blog.html#article_3');
   }
   window.scrollTo(0, 0);
 }
