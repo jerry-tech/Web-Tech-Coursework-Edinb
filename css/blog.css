@@ -25,6 +25,7 @@ body{
     scroll-behavior: smooth;
     margin: auto;
     color: black;
+    font-size: 13px;
 }
 
 .blog_text {
@@ -113,8 +114,8 @@ body{
 
 .blog_text_style {
     text-align: justify;
-    line-height: 1.5;
-    font-size: 12px;
+    line-height: 1.7;
+    font-size: 13px;
 
     height: fit-content;
 }
@@ -123,6 +124,8 @@ body{
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 20px;
+    width: 80%;
+    margin: auto;
 }
 
 @media screen and (width < 768px) {
@@ -154,7 +157,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     position: relative;
     top: -10px;
 }
@@ -172,7 +174,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-
     position: relative;
     top: -10px;
 }
@@ -181,4 +182,15 @@ body{
     background: none;
     margin: auto;
     border-radius: 5px;
+}
+.article-sub-images{
+    border-radius: 6px; 
+    width: 100%;
+    height: 70%;
+}
+.cont-text-padding{
+    width: 95%; margin: auto;
+}
+.citation-text{
+    font-style: italic; text-align: right; font-weight: bold;
 }
