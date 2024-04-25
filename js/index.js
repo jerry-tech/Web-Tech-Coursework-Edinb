@@ -48,7 +48,8 @@ personalizationForm.addEventListener("submit", (e) => {
     if (personalizationName != "" && personalizationName != null) {
         setCookie(USERNAME_COOKIE_KEY, personalizationName, 365);
         closeModal();
-
+        //calling the function to call the current weather api.
+        callCurrentWeatherAPI();
         document.getElementById('greetings').textContent = greeting() + ", " + personalizationName.split(' ')[0];
     }
 });
