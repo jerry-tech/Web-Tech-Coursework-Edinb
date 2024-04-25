@@ -866,7 +866,7 @@ figure {
 
 .news-image {
     width: 85%;
-
+    height: 160px;
     border-radius: 5%;
 }
 
