@@ -289,3 +289,7 @@ th{
 .mr-2 {
     margin-right: 2.5%;
 }
+
+.icon{
+    margin-top: -0px !important;
+}

@@ -121,7 +121,7 @@ main {
 .nav-active{
     background-color: var(--primary-color-25) !important;
     border-radius: .5rem !important;
-    color: var(--text-primary) !important;
+    color: black !important;
 }
 
 @media screen and (width< 1200px) {
@@ -172,6 +172,7 @@ main {
     position: relative;
     transform: translate(50%, 100%);
     font-size: 2rem;
+    margin-top: -140px;
     color: var(--text-dark);
 }
 
@@ -950,7 +951,6 @@ figure {
 .footer-col h4::before {
     content: '';
     position: absolute;
-    left: 0;
     bottom: -10px;
     background-color: var(--primary-color);
     height: 2px;
