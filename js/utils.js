@@ -257,9 +257,8 @@ export const getImageUrl = (imageData) => {
 }
 
 export const navigateByUrl = (urlPath) => {
-  
   var a = document.createElement('a');
-  a.href = './blog.html#article1';
+  a.href = urlPath;
   document.body.appendChild(a);
   a.click();
 }
