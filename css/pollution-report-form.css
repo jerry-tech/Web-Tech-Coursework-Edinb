@@ -65,3 +65,12 @@ textarea {
     margin-top: .2rem;
     margin-bottom: 1rem;
 }
+.btn {
+    padding: 0.5rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    align-self: end;
+    margin: 2rem 0;
+}

@@ -123,3 +123,6 @@ input[type="text"]:focus {
 .hide {
     display: none !important;
 }
+.icon{
+    margin-top: -130px !important;
+}
